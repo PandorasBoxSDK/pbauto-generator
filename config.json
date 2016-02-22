@@ -65,7 +65,7 @@
                 },
                 {
                     "hash": "496329e8c509908c9168131fcb08d797d6f6b213",
-                    "src": "pbauto-nodejs-http-package.json"
+                    "src": "package.json"
                 }
             ],
             "name": "pbauto-nodejs-http",
