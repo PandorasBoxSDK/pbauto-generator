@@ -1,0 +1,5 @@
+inflection==0.3.1
+Jinja2==2.8
+markdown2==2.3.0
+MarkupSafe==0.23
+wheel==0.24.0

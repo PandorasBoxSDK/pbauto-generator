@@ -1,0 +1,5894 @@
+{
+    "chunks": {
+        "1": {
+            "help": "The siteId is a unique number that identifies a manager, player or server in a project. Sites can also be created without assigning them to a specific physical machine. The site id can be found when looking at the Master in the Devices Tab",
+            "name": "siteId",
+            "type_id": "3"
+        },
+        "2": {
+            "help": "The deviceId is a per-site unique number that identifies a kind of layer, camera, output or a dmx-device.",
+            "name": "deviceId",
+            "type_id": "3"
+        },
+        "3": {
+            "help": "The parameterName is a string that identifies a property of a device. (ASCII only)",
+            "name": "parameterName",
+            "type_id": "6"
+        },
+        "4": {
+            "help": "A numeric value to a corresponding parameter.",
+            "name": "parameterValue",
+            "type_id": "3"
+        },
+        "5": {
+            "help": "doSilent (when set) prevents the activation of a parameter. It will stay inactive and won't be treated as an active value. ",
+            "name": "doSilent",
+            "type_id": "10"
+        },
+        "6": {
+            "help": "doDirect (when set) sets the value without using the default value smoothing",
+            "name": "doDirect",
+            "type_id": "10"
+        },
+        "7": {
+            "help": "A numeric value to a corresponding parameter.",
+            "name": "parameterValue",
+            "type_id": "5"
+        },
+        "8": {
+            "help": "The number of elements in this tuple",
+            "name": "tupleDimension",
+            "type_id": "3"
+        },
+        "9": {
+            "help": "The data of the tuple collection",
+            "name": "tupleData",
+            "type_id": "13"
+        },
+        "10": {
+            "help": "The parameterName is a string that identifies a property of a device.",
+            "name": "parameterName",
+            "type_id": "7"
+        },
+        "11": {
+            "help": "A numeric representation for a parameter. This is faster than using the text based identifier.",
+            "name": "parameterKindId",
+            "type_id": "101"
+        },
+        "12": {
+            "help": "A time span in milliseconds that it takes for a parameter to fade to it's new value. A value of 0 means no parameter smoothing",
+            "name": "smoothingTime",
+            "type_id": "3"
+        },
+        "13": {
+            "help": "States whether something is currently selected in the master interface",
+            "name": "isSelected",
+            "type_id": "1"
+        },
+        "14": {
+            "help": "Number of devices currently in selection.",
+            "name": "selectedDevicesCount",
+            "type_id": "3"
+        },
+        "15": {
+            "help": "A index for the collection of selected devices. Get selected devices count with [c:16]",
+            "name": "selectionIndex",
+            "type_id": "3"
+        },
+        "16": {
+            "help": "The unique identifier for a sequence. The first/default sequence is 1",
+            "name": "sequenceId",
+            "type_id": "3"
+        },
+        "17": {
+            "help": "The HOURS part of a time or timespan",
+            "name": "hours",
+            "type_id": "3"
+        },
+        "18": {
+            "help": "The MINUTES part of a time or timespan",
+            "name": "minutes",
+            "type_id": "3"
+        },
+        "19": {
+            "help": "The SECONDS part of a time or timespan",
+            "name": "seconds",
+            "type_id": "3"
+        },
+        "20": {
+            "help": "The FRAMES part of a time or timespan",
+            "name": "frames",
+            "type_id": "3"
+        },
+        "21": {
+            "help": "Resources can have a identifier pair (Folder and File ID) for external control like DMX,Art-net and alike. This is the FOLDER part. The Widget Designer also takes advantage of this kind of addressing of resources.",
+            "name": "dmxFolderId",
+            "type_id": "3"
+        },
+        "22": {
+            "help": "Resources can have a identifier pair (Folder and File ID) for external control like DMX,Art-net and alike. This is the FILE part. The dmxFileId identifier is unique in each dmx-folder. The Widget Designer also takes advantage of this kind of addressing of resources.",
+            "name": "dmxFileId",
+            "type_id": "3"
+        },
+        "23": {
+            "help": "The bank identifier for presets. They can be found in the Master's interface in the Project tab. The Presets folder contains all banks.",
+            "name": "bankId",
+            "type_id": "3"
+        },
+        "24": {
+            "help": "A identifier for a preset. It is unique in each bank.",
+            "name": "presetId",
+            "type_id": "3"
+        },
+        "25": {
+            "help": "When forMesh it set, the command executes it's action for the MESH parameter of the given device. When set to false it is executed on the MEDIA parameter.",
+            "name": "forMesh",
+            "type_id": "10"
+        },
+        "28": {
+            "help": "A string representing the full path to a resource of the project. Resources in the root folder can be addressed directly like \"resource.mpv\". The same resource in a subfolder named \"sub\" can be referenced by \"sub/resource.mpv\"",
+            "name": "resourcePath",
+            "type_id": "7"
+        },
+        "29": {
+            "help": "A path in the project. leave blank for the root folder. Subfolders are separated by a forward slash, no terminating slash is allowed.",
+            "name": "projectPath",
+            "type_id": "7"
+        },
+        "30": {
+            "help": "Item IDs are counted from top to bottom in the project tree. Nesting has no influence on counting order. The first item is 0 (always the project root folder)",
+            "name": "itemIdFrom",
+            "type_id": "3"
+        },
+        "31": {
+            "help": "Item IDs are counted from top to bottom in the project tree. Nesting has no influence on counting order. The first item is 0 (always the project root folder)",
+            "name": "itemIdTo",
+            "type_id": "3"
+        },
+        "32": {
+            "help": "Playback status of a sequence. Possible values are 1 (Play), 2 (Stop) or 3 (Pause)",
+            "name": "transportMode",
+            "type_id": "107"
+        },
+        "38": {
+            "help": "When true then the action is done to the NEXT element. When set to false then the action is done to the PREVIOUS element.",
+            "name": "isNext",
+            "type_id": "1"
+        },
+        "39": {
+            "help": "A unique identifier for a cue.",
+            "name": "cueId",
+            "type_id": "3"
+        },
+        "40": {
+            "help": "The numeric visibility from 0 (totally opaque) to 255 (fully visible)",
+            "name": "transparency",
+            "type_id": "3"
+        },
+        "41": {
+            "help": "The mode for the SMTPE link: 0 (None), 1 (Send) or 2 (Receive)",
+            "name": "timeCodeMode",
+            "type_id": "108"
+        },
+        "42": {
+            "help": "Determines what should happen when the incoming timecode stops",
+            "name": "stopAction",
+            "type_id": "109"
+        },
+        "43": {
+            "help": "A Windows-Styled path to a file. (\"C:cooluxcontentsamplevideo.mpv\")",
+            "name": "filePath",
+            "type_id": "6"
+        },
+        "44": {
+            "help": "A path in the project tab. (\"somefolder/otherfolder\") Leave empty for root directory.",
+            "name": "projectPath",
+            "type_id": "6"
+        },
+        "45": {
+            "help": "TreeItemIDs are counted from top to bottom in the project tree. Nesting has no influence on counting order. The first item is 0 (always the project root folder)",
+            "name": "treeItemIndex",
+            "type_id": "3"
+        },
+        "46": {
+            "help": "Resources can have a identifier pair (Folder and File ID) for external control like DMX,Art-net and alike. This is the FOLDER part. The Widget Designer also takes advantage of this kind of addressing of resources.",
+            "name": "dmxFolderId",
+            "type_id": "2"
+        },
+        "47": {
+            "help": "Resources can have a identifier pair (Folder and File ID) for external control like DMX,Art-net and alike. This is the FILE part. The dmxFileId identifier is unique in each dmx-folder. The Widget Designer also takes advantage of this kind of addressing of resources.",
+            "name": "dmxFileId",
+            "type_id": "2"
+        },
+        "48": {
+            "help": "A Windows-Styled path to a folder. (\"C:cooluxcontentsample_folder\")",
+            "name": "folderPath",
+            "type_id": "7"
+        },
+        "49": {
+            "help": "A Windows-Styled path to a folder. (\"C:cooluxcontentsample_folder\")",
+            "name": "folderPath",
+            "type_id": "6"
+        },
+        "50": {
+            "help": "True: Execute action on all equally named items. False: Do action only for one/the first item having the target name.",
+            "name": "allEquallyNamed",
+            "type_id": "10"
+        },
+        "51": {
+            "help": "True: Remove folders. False: Keep folder structure.",
+            "name": "removeFolder",
+            "type_id": "10"
+        },
+        "52": {
+            "help": "A Windows-Styled path to a file. (\"C:cooluxcontentsamplevideo.mpv\")",
+            "name": "filePath",
+            "type_id": "7"
+        },
+        "53": {
+            "help": "Enable/Disable FluidFrame",
+            "name": "frameBlended",
+            "type_id": "10"
+        },
+        "54": {
+            "help": "Sets the deinterlacing mode",
+            "name": "deinterlacer",
+            "type_id": "3"
+        },
+        "55": {
+            "help": "Anisotropic Filtering",
+            "name": "useFiltering",
+            "type_id": "10"
+        },
+        "56": {
+            "help": "Underscan for media",
+            "name": "useUnderscan",
+            "type_id": "10"
+        },
+        "57": {
+            "help": "Convert MPEG color space to full 24bit",
+            "name": "useMpegColorSpace",
+            "type_id": "10"
+        },
+        "58": {
+            "help": "Enables the use of the alpha channel",
+            "name": "useAlphaChannel",
+            "type_id": "10"
+        },
+        "59": {
+            "help": "",
+            "name": "text",
+            "type_id": "7"
+        },
+        "60": {
+            "help": "A Windows-Styled path to a folder. (\"C:cooluxcontentprojectsmyproject\")",
+            "name": "folderPathToProject",
+            "type_id": "6"
+        },
+        "61": {
+            "help": "The name of the XML file of the project. (\"myproject.xml\")",
+            "name": "projectXmlFileName",
+            "type_id": "6"
+        },
+        "62": {
+            "help": "",
+            "name": "saveExisting",
+            "type_id": "1"
+        },
+        "63": {
+            "help": "",
+            "name": "save",
+            "type_id": "1"
+        },
+        "64": {
+            "help": "",
+            "name": "acceptDmx",
+            "type_id": "1"
+        },
+        "65": {
+            "help": "",
+            "name": "index",
+            "type_id": "3"
+        },
+        "66": {
+            "help": "",
+            "name": "id1",
+            "type_id": "3"
+        },
+        "67": {
+            "help": "",
+            "name": "id2",
+            "type_id": "3"
+        },
+        "68": {
+            "help": "",
+            "name": "playMode",
+            "type_id": "3"
+        },
+        "69": {
+            "help": "",
+            "name": "doIgnore",
+            "type_id": "1"
+        },
+        "70": {
+            "help": "",
+            "name": "isFullscreen",
+            "type_id": "1"
+        },
+        "71": {
+            "help": "",
+            "name": "ipAddress",
+            "type_id": "6"
+        },
+        "72": {
+            "help": "",
+            "name": "width",
+            "type_id": "3"
+        },
+        "73": {
+            "help": "",
+            "name": "height",
+            "type_id": "3"
+        },
+        "74": {
+            "help": "",
+            "name": "FontFamily",
+            "type_id": "6"
+        },
+        "75": {
+            "help": "",
+            "name": "size",
+            "type_id": "3"
+        },
+        "76": {
+            "help": "",
+            "name": "style",
+            "type_id": "1"
+        },
+        "77": {
+            "help": "",
+            "name": "alignment",
+            "type_id": "1"
+        },
+        "78": {
+            "help": "",
+            "name": "colorRed",
+            "type_id": "1"
+        },
+        "79": {
+            "help": "",
+            "name": "colorGreen",
+            "type_id": "1"
+        },
+        "80": {
+            "help": "",
+            "name": "colorBlue",
+            "type_id": "1"
+        },
+        "81": {
+            "help": "",
+            "name": "centerOnTexture",
+            "type_id": "1"
+        },
+        "82": {
+            "help": "",
+            "name": "Ip",
+            "type_id": "6"
+        },
+        "83": {
+            "help": "",
+            "name": "mediaCount",
+            "type_id": "3"
+        },
+        "84": {
+            "help": "The total number of items",
+            "name": "treeItemCount",
+            "type_id": "3"
+        },
+        "85": {
+            "help": "",
+            "name": "folderName",
+            "type_id": "7"
+        },
+        "88": {
+            "help": "",
+            "name": "selectionMode",
+            "type_id": "105"
+        },
+        "89": {
+            "help": "",
+            "name": "faderId",
+            "type_id": "3"
+        },
+        "90": {
+            "help": "",
+            "name": "cueBtnId",
+            "type_id": "3"
+        },
+        "91": {
+            "help": "",
+            "name": "cueKindId",
+            "type_id": "3"
+        },
+        "92": {
+            "help": "",
+            "name": "isGraphicLayer",
+            "type_id": "10"
+        },
+        "93": {
+            "help": "",
+            "name": "layerId",
+            "type_id": "3"
+        },
+        "94": {
+            "help": "",
+            "name": "enable",
+            "type_id": "10"
+        },
+        "95": {
+            "help": "",
+            "name": "viewId",
+            "type_id": "3"
+        },
+        "96": {
+            "help": "",
+            "name": "spareFromSpread",
+            "type_id": "10"
+        },
+        "97": {
+            "help": "",
+            "name": "isMedia",
+            "type_id": "10"
+        },
+        "98": {
+            "help": "",
+            "name": "assetPath",
+            "type_id": "6"
+        },
+        "99": {
+            "help": "A string representing the full path to a resource of the project. Resources in the root folder can be addressed directly like \"resource.mpv\". The same resource in a subfolder named \"sub\" can be referenced by \"sub/resource.mpv\"",
+            "name": "resourcePath",
+            "type_id": "6"
+        },
+        "101": {
+            "help": "",
+            "name": "isConnected",
+            "type_id": "10"
+        },
+        "102": {
+            "help": "The target coolux Hardware",
+            "name": "forJogShuttle",
+            "type_id": "103"
+        },
+        "103": {
+            "help": "",
+            "name": "isEnabled",
+            "type_id": "10"
+        },
+        "104": {
+            "help": "",
+            "name": "jumpCount",
+            "type_id": "3"
+        },
+        "105": {
+            "help": "",
+            "name": "isContentInconsistent",
+            "type_id": "104"
+        },
+        "106": {
+            "help": "",
+            "name": "isConsistent",
+            "type_id": "3"
+        },
+        "107": {
+            "help": "",
+            "name": "mouseEventType",
+            "type_id": "3"
+        },
+        "108": {
+            "help": "",
+            "name": "screenPosX",
+            "type_id": "3"
+        },
+        "109": {
+            "help": "",
+            "name": "screenPosY",
+            "type_id": "3"
+        },
+        "110": {
+            "help": "",
+            "name": "firstPass",
+            "type_id": "10"
+        },
+        "111": {
+            "help": "",
+            "name": "scrollValue",
+            "type_id": "3"
+        },
+        "112": {
+            "help": "",
+            "name": "touchId",
+            "type_id": "3"
+        },
+        "113": {
+            "help": "",
+            "name": "touchType",
+            "type_id": "3"
+        },
+        "114": {
+            "help": "",
+            "name": "keyboardEventType",
+            "type_id": "3"
+        },
+        "115": {
+            "help": "",
+            "name": "keyCode",
+            "type_id": "3"
+        },
+        "116": {
+            "help": "",
+            "name": "showCursor",
+            "type_id": "10"
+        },
+        "117": {
+            "help": "LIKE ",
+            "name": "url",
+            "type_id": "7"
+        },
+        "118": {
+            "help": "",
+            "name": "browserProjectPath",
+            "type_id": "7"
+        },
+        "119": {
+            "help": "",
+            "name": "isMaster",
+            "type_id": "10"
+        },
+        "120": {
+            "help": "",
+            "name": "encryptionKey",
+            "type_id": "7"
+        },
+        "121": {
+            "help": "",
+            "name": "isKeyAdded",
+            "type_id": "10"
+        },
+        "122": {
+            "help": "",
+            "name": "encryptionPolicy",
+            "type_id": "7"
+        },
+        "123": {
+            "help": "",
+            "name": "enableInputRouting",
+            "type_id": "10"
+        },
+        "124": {
+            "help": "",
+            "name": "enableInputAutomation",
+            "type_id": "10"
+        },
+        "125": {
+            "help": "",
+            "name": "outputId",
+            "type_id": "3"
+        },
+        "126": {
+            "help": "",
+            "name": "enableInputPicking",
+            "type_id": "10"
+        },
+        "127": {
+            "help": "",
+            "name": "asioVolume",
+            "type_id": "5"
+        },
+        "129": {
+            "help": "The width of a thumbnail image in pixels. Always comes in pair with [thumbnailHeight]",
+            "name": "thumbnailWidth",
+            "type_id": "3"
+        },
+        "130": {
+            "help": "The width of a thumbnail image in pixels. Always comes in pair with [thumbnailWidth]",
+            "name": "thumbnailHeight",
+            "type_id": "3"
+        },
+        "131": {
+            "help": "4 Byte/Pixel encoded image data (BGRA). There is no header, only raw data. The width and height can be found in [thumbnailWidth] and [thumbnailHeight]",
+            "name": "thumbnailData",
+            "type_id": "13"
+        },
+        "132": {
+            "help": "",
+            "name": "doSetDmxIds",
+            "type_id": "10"
+        },
+        "135": {
+            "help": "",
+            "name": "setdmxFileIds",
+            "type_id": "10"
+        },
+        "136": {
+            "help": "",
+            "name": "newDmxFolderId",
+            "type_id": "3"
+        },
+        "137": {
+            "help": "",
+            "name": "newdmxFileId",
+            "type_id": "3"
+        },
+        "138": {
+            "help": "",
+            "name": "pPlaylistFolderPath",
+            "type_id": "6"
+        },
+        "139": {
+            "help": "A path in the project tab containing media",
+            "name": "sourceProjectPath",
+            "type_id": "6"
+        },
+        "140": {
+            "help": "",
+            "name": "sourceFolderItemId",
+            "type_id": "3"
+        },
+        "141": {
+            "help": "",
+            "name": "playlistDmxFolderId",
+            "type_id": "3"
+        },
+        "142": {
+            "help": "",
+            "name": "playlistdmxFileId",
+            "type_id": "3"
+        },
+        "143": {
+            "help": "",
+            "name": "resourceDmxFolderId",
+            "type_id": "3"
+        },
+        "144": {
+            "help": "",
+            "name": "resourceDmxFileId",
+            "type_id": "3"
+        },
+        "145": {
+            "help": "A path in the project to a playlist.",
+            "name": "playlistPath",
+            "type_id": "6"
+        },
+        "147": {
+            "help": "",
+            "name": "playlistItemIndex",
+            "type_id": "3"
+        },
+        "148": {
+            "help": "",
+            "name": "resourceItemId",
+            "type_id": "3"
+        },
+        "149": {
+            "help": "",
+            "name": "playlistSize",
+            "type_id": "3"
+        },
+        "150": {
+            "help": "",
+            "name": "newIndex",
+            "type_id": "3"
+        },
+        "151": {
+            "help": "",
+            "name": "fadeFxId",
+            "type_id": "3"
+        },
+        "152": {
+            "help": "",
+            "name": "pNote",
+            "type_id": "6"
+        },
+        "153": {
+            "help": "",
+            "name": "folderID",
+            "type_id": "3"
+        },
+        "154": {
+            "help": "",
+            "name": "fileID",
+            "type_id": "3"
+        },
+        "155": {
+            "help": "",
+            "name": "pFilename",
+            "type_id": "6"
+        },
+        "156": {
+            "help": "The name of a encoding preset. A list of possible presets can be found in the Video Recording Tab",
+            "name": "encodingPresetName",
+            "type_id": "6"
+        },
+        "161": {
+            "help": "A string representing the full path to a live input resource of the project. Live Inputs that reside in the root fodler of the project can be addressed directly like \"MyLiveInput\". The same resource in a subfolder named \"sub\" can be referenced by \"sub/MyLiveInput\"",
+            "name": "liveInputResourcePath",
+            "type_id": "6"
+        },
+        "162": {
+            "help": "The time to start at (hours)",
+            "name": "startHour",
+            "type_id": "3"
+        },
+        "163": {
+            "help": "The time to start at (minutes)",
+            "name": "startMinute",
+            "type_id": "3"
+        },
+        "164": {
+            "help": "The time to start at (seconds)",
+            "name": "startSecond",
+            "type_id": "3"
+        },
+        "165": {
+            "help": "The time to start at (frames)",
+            "name": "startFrame",
+            "type_id": "3"
+        },
+        "166": {
+            "help": "The time to end at (hours)",
+            "name": "endHour",
+            "type_id": "3"
+        },
+        "167": {
+            "help": "The time to end at (minutes)",
+            "name": "endMinute",
+            "type_id": "3"
+        },
+        "168": {
+            "help": "The time to end at (seconds)",
+            "name": "endSecond",
+            "type_id": "3"
+        },
+        "169": {
+            "help": "The time to end at (frames)",
+            "name": "endFrame",
+            "type_id": "3"
+        },
+        "170": {
+            "help": "",
+            "name": "encodingPreset",
+            "type_id": "6"
+        },
+        "171": {
+            "help": "",
+            "name": "overwriteExisting",
+            "type_id": "10"
+        },
+        "172": {
+            "help": "",
+            "name": "canvasDmxFolderId",
+            "type_id": "3"
+        },
+        "173": {
+            "help": "",
+            "name": "canvasDmxFileId",
+            "type_id": "3"
+        },
+        "174": {
+            "help": "A path in the project to a canvas.",
+            "name": "canvasResourcePath",
+            "type_id": "6"
+        },
+        "175": {
+            "help": "",
+            "name": "canvasItemIndex",
+            "type_id": "3"
+        },
+        "177": {
+            "help": "",
+            "name": "cmd",
+            "type_id": "6"
+        },
+        "178": {
+            "help": "",
+            "name": "cmdContainsResourcePath",
+            "type_id": "10"
+        },
+        "179": {
+            "help": "",
+            "name": "commands",
+            "type_id": "6"
+        },
+        "180": {
+            "help": "",
+            "name": "itemId",
+            "type_id": "3"
+        },
+        "181": {
+            "help": "",
+            "name": "bundlePath",
+            "type_id": "6"
+        },
+        "182": {
+            "help": "",
+            "name": "bundleName",
+            "type_id": "6"
+        },
+        "183": {
+            "help": "",
+            "name": "newResourceName",
+            "type_id": "6"
+        },
+        "184": {
+            "help": "",
+            "name": "doAddToStack",
+            "type_id": "10"
+        },
+        "185": {
+            "help": "",
+            "name": "playlistResourcePath",
+            "type_id": "6"
+        },
+        "186": {
+            "help": "",
+            "name": "text",
+            "type_id": "6"
+        },
+        "187": {
+            "help": " ",
+            "name": "action",
+            "type_id": "3"
+        },
+        "188": {
+            "help": " ",
+            "name": "data",
+            "type_id": "3"
+        },
+        "189": {
+            "help": "",
+            "name": "cueName",
+            "type_id": "6"
+        },
+        "190": {
+            "help": "",
+            "name": "sourceDeviceId",
+            "type_id": "3"
+        },
+        "191": {
+            "help": "",
+            "name": "sublayerId",
+            "type_id": "3"
+        },
+        "192": {
+            "help": "The frames per second to be used.",
+            "name": "fps",
+            "type_id": "3"
+        },
+        "193": {
+            "help": "True: This text contains formatting that should be applied to the text asset. False: Set the raw text only.",
+            "name": "isFormatted",
+            "type_id": "10"
+        },
+        "194": {
+            "help": "",
+            "name": "hoursPreviousCue",
+            "type_id": "3"
+        },
+        "195": {
+            "help": "",
+            "name": "minutesPreviousCue",
+            "type_id": "3"
+        },
+        "196": {
+            "help": "",
+            "name": "secondsPreviousCue",
+            "type_id": "3"
+        },
+        "197": {
+            "help": "",
+            "name": "framesPreviousCue",
+            "type_id": "3"
+        },
+        "198": {
+            "help": "",
+            "name": "hoursNextCue",
+            "type_id": "3"
+        },
+        "199": {
+            "help": "",
+            "name": "minutesNextCue",
+            "type_id": "3"
+        },
+        "200": {
+            "help": "",
+            "name": "secondsNextCue",
+            "type_id": "3"
+        },
+        "201": {
+            "help": "",
+            "name": "framesNextCue",
+            "type_id": "3"
+        },
+        "202": {
+            "help": "",
+            "name": "previousCueName",
+            "type_id": "6"
+        },
+        "203": {
+            "help": "",
+            "name": "nextCueName",
+            "type_id": "6"
+        },
+        "204": {
+            "help": "",
+            "name": "previousCueMode",
+            "type_id": "3"
+        },
+        "205": {
+            "help": "",
+            "name": "nextCueMode",
+            "type_id": "3"
+        },
+        "206": {
+            "help": "",
+            "name": "previousCueId",
+            "type_id": "3"
+        },
+        "207": {
+            "help": "",
+            "name": "nextCueId",
+            "type_id": "3"
+        },
+        "208": {
+            "help": "A index pointing to a group",
+            "name": "groupIndex",
+            "type_id": "3"
+        },
+        "209": {
+            "help": "A trait of a watchfolder.",
+            "name": "watchFolderProperty",
+            "type_id": "106"
+        },
+        "210": {
+            "help": "",
+            "name": "pendingOnly",
+            "type_id": "10"
+        },
+        "211": {
+            "help": "",
+            "name": "cueName",
+            "type_id": "7"
+        },
+        "212": {
+            "help": "Set to true to enable automatic DMX IDs. If you want auto DMX IDs, please set any dmxFolderId and dmxFileId to 0 (if this function accepts any)",
+            "name": "autoIncrementDmxId",
+            "type_id": "10"
+        },
+        "213": {
+            "help": "The name of the resource without path",
+            "name": "resourceName",
+            "type_id": "6"
+        },
+        "214": {
+            "help": "The settings of the video resource",
+            "name": "options",
+            "type_id": "3"
+        },
+        "215": {
+            "help": "The time to start at (seconds)",
+            "name": "durationSeconds",
+            "type_id": "3"
+        },
+        "216": {
+            "help": "The time to start at (minutes)",
+            "name": "durationMinutes",
+            "type_id": "3"
+        },
+        "217": {
+            "help": "The time to start at (hours)",
+            "name": "durationHours",
+            "type_id": "3"
+        },
+        "218": {
+            "help": "The time to start at (frames)",
+            "name": "durationFrames",
+            "type_id": "3"
+        },
+        "219": {
+            "help": "The time to start at (seconds)",
+            "name": "fadeOutSecond",
+            "type_id": "3"
+        },
+        "220": {
+            "help": "The time to start at (minutes)",
+            "name": "fadeOutMinute",
+            "type_id": "3"
+        },
+        "221": {
+            "help": "The time to start at (hours)",
+            "name": "fadeOutHour",
+            "type_id": "3"
+        },
+        "222": {
+            "help": "The time to start at (frames)",
+            "name": "fadeOutFrame",
+            "type_id": "3"
+        },
+        "223": {
+            "help": "",
+            "name": "inRadians",
+            "type_id": "10"
+        },
+        "224": {
+            "help": "",
+            "name": "yaw",
+            "type_id": "5"
+        },
+        "225": {
+            "help": "",
+            "name": "pitch",
+            "type_id": "5"
+        },
+        "226": {
+            "help": "",
+            "name": "roll",
+            "type_id": "5"
+        },
+        "227": {
+            "help": "The texture format",
+            "name": "textureFormat",
+            "type_id": "111"
+        },
+        "228": {
+            "help": "",
+            "name": "isWarped",
+            "type_id": "10"
+        },
+        "229": {
+            "help": "",
+            "name": "deviceIds",
+            "type_id": "12"
+        },
+        "230": {
+            "help": "",
+            "name": "siteIds",
+            "type_id": "12"
+        },
+        "231": {
+            "help": "",
+            "name": "siteType",
+            "type_id": "7"
+        },
+        "232": {
+            "help": "",
+            "name": "attributeName",
+            "type_id": "6"
+        },
+        "233": {
+            "help": "",
+            "name": "attribute",
+            "type_id": "7"
+        },
+        "234": {
+            "help": "",
+            "name": "value",
+            "type_id": "99"
+        },
+        "235": {
+            "help": "",
+            "name": null,
+            "type_id": "3"
+        },
+        "236": {
+            "help": "",
+            "name": "forward",
+            "type_id": "10"
+        },
+        "237": {
+            "help": "",
+            "name": "isLooping",
+            "type_id": "10"
+        },
+        "238": {
+            "help": "",
+            "name": "folderItemIndex",
+            "type_id": "3"
+        },
+        "239": {
+            "help": "Set Dimensions",
+            "name": "setDims",
+            "type_id": "10"
+        },
+        "240": {
+            "help": "",
+            "name": "resourceType",
+            "type_id": "112"
+        },
+        "241": {
+            "help": "",
+            "name": "revision",
+            "type_id": "3"
+        },
+        "242": {
+            "help": "",
+            "name": "playlistEntryIndex",
+            "type_id": "3"
+        },
+        "243": {
+            "help": "",
+            "name": "treeItemIds",
+            "type_id": "12"
+        },
+        "244": {
+            "help": "A Tree item index. This only includes MEDIA",
+            "name": "treeItemsMediaIndex",
+            "type_id": "3"
+        },
+        "245": {
+            "help": "",
+            "name": "sysRepeat",
+            "type_id": "100"
+        },
+        "246": {
+            "help": "",
+            "name": "playlistEntryIndex",
+            "type_id": "2"
+        },
+        "247": {
+            "help": "",
+            "name": "timeRunning",
+            "type_id": "4"
+        },
+        "248": {
+            "help": "",
+            "name": "duration",
+            "type_id": "4"
+        },
+        "249": {
+            "help": "",
+            "name": "fadeOut",
+            "type_id": "4"
+        }
+    },
+    "commands": [
+        {
+            "code": 1,
+            "help": "Sets the value of a *parameter* on a *device*.",
+            "name": "SetParamInt",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "code": 84,
+            "help": "Sets the value of a *parameter* on a *device*.",
+            "name": "SetParamDouble",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3,
+                7,
+                5,
+                6
+            ]
+        },
+        {
+            "code": 115,
+            "help": "Changes the value of a *parameter* on a *device*. This is a dedicated function for *tuples*.",
+            "name": "SetParamByteTuples",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3,
+                8,
+                9,
+                5,
+                6
+            ]
+        },
+        {
+            "code": 79,
+            "help": "Gets the value of a *parameter* of a *device*",
+            "name": "GetParam",
+            "recv": [
+                7
+            ],
+            "send": [
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "code": 132,
+            "help": "Gets the value of a *parameter* of a *device*. This is a dedicated function for *tuples*.",
+            "name": "GetParamByteTuples",
+            "recv": [
+                8,
+                9
+            ],
+            "send": [
+                1,
+                2,
+                10
+            ]
+        },
+        {
+            "code": 39,
+            "help": "Sets the value of a *parameter* on a *device*. This function is faster than it's string-based pendant. Use this for performance!",
+            "name": "SetParamOfKind",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                11,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "code": 85,
+            "help": "Sets the value of a *parameter* on a *device*. This function is faster than it's string-based pendant. Use this for performance!",
+            "name": "SetParamOfKindDouble",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                11,
+                7,
+                5,
+                6
+            ]
+        },
+        {
+            "code": 80,
+            "help": "Gets the value of a *parameter* on a *device*. This function is faster than it's string-based pendant. Use this for performance!",
+            "name": "GetParamOfKind",
+            "recv": [
+                7
+            ],
+            "send": [
+                1,
+                2,
+                11
+            ]
+        },
+        {
+            "code": 58,
+            "help": "Gets the value of a *parameter* of the currently selected device. If multiple devices are selected only the one is considered.",
+            "name": "SetParamInSelection",
+            "recv": [],
+            "send": [
+                3,
+                4
+            ]
+        },
+        {
+            "code": 99,
+            "help": "Gets the value of a *parameter* of the currently selected device. If multiple devices are selected only the one is considered.",
+            "name": "SetParamInSelectionDouble",
+            "recv": [],
+            "send": [
+                3,
+                7
+            ]
+        },
+        {
+            "code": 59,
+            "help": "Gets the value of a *parameter* on the currently selected *device*. This function is faster than it's string-based pendant. Use this for performance!",
+            "name": "SetParamOfKindInSelection",
+            "recv": [],
+            "send": [
+                11,
+                4
+            ]
+        },
+        {
+            "code": 100,
+            "help": "Gets the value of a *parameter* on the currently selected *device*. This function is faster than it's string-based pendant. Use this for performance!",
+            "name": "SetParamOfKindInSelectionDouble",
+            "recv": [],
+            "send": [
+                11,
+                7
+            ]
+        },
+        {
+            "code": 232,
+            "help": "Sets the smoothing / fade time of a parameter. ",
+            "name": "SetParamLerpTime",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3,
+                12
+            ]
+        },
+        {
+            "code": 74,
+            "help": "Gets the *selection* state of a *device*.",
+            "name": "GetIsDeviceSelected",
+            "recv": [
+                13
+            ],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 81,
+            "help": "Gets the number of selected devices.",
+            "name": "GetSelectedDeviceCount",
+            "recv": [
+                14
+            ],
+            "send": []
+        },
+        {
+            "code": 75,
+            "help": "Gets the ID of the *device* in the *selection*. This way you can find out which devices are currently selected.",
+            "name": "GetSelectedDevice",
+            "recv": [
+                1,
+                2
+            ],
+            "send": [
+                15
+            ]
+        },
+        {
+            "code": 56,
+            "help": "Applies a *resource* to the specified *sequence* and time.",
+            "name": "SetSequenceMediaAtTime",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22
+            ]
+        },
+        {
+            "code": 2,
+            "help": "Assigns a *resource* to the specified *device*.",
+            "name": "AssignResource",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                21,
+                22,
+                25
+            ]
+        },
+        {
+            "code": 129,
+            "help": "Assigns a *resource* to the specified *device* by using the name of the *resource*.",
+            "name": "AssignResourceByName",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                28,
+                10,
+                25
+            ]
+        },
+        {
+            "code": 61,
+            "help": "Assigns a *resource* to the currently *selected* *device*.",
+            "name": "AssignResourceToSelection",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                25
+            ]
+        },
+        {
+            "code": 144,
+            "help": "Moves a *resource* in the *project tree*.",
+            "name": "MoveResourceToPath",
+            "recv": [],
+            "send": [
+                28,
+                29
+            ]
+        },
+        {
+            "code": 158,
+            "help": "Moves a *tree item* in the *project tree*.",
+            "name": "MoveTreeItem",
+            "recv": [],
+            "send": [
+                30,
+                31
+            ]
+        },
+        {
+            "code": 3,
+            "help": "Sets the play/pause/stop state of the *sequence*.",
+            "name": "SetSequenceTransportMode",
+            "recv": [],
+            "send": [
+                16,
+                32
+            ]
+        },
+        {
+            "code": 72,
+            "help": "Gets the play/pause/stop state of the *sequence*.",
+            "name": "GetSequenceTransportMode",
+            "recv": [
+                32
+            ],
+            "send": [
+                16
+            ]
+        },
+        {
+            "code": 5,
+            "help": "Moves the *sequence* to given *timecode*",
+            "name": "MoveSequenceToTime",
+            "recv": [],
+            "send": [
+                16,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 73,
+            "help": "Gets the current *timecode* of a *sequence*.",
+            "name": "GetSequenceTime",
+            "recv": [
+                17,
+                18,
+                19,
+                20
+            ],
+            "send": [
+                16
+            ]
+        },
+        {
+            "code": 6,
+            "help": "Moves the *timeline* by one frame forward or backward.",
+            "name": "MoveSequenceToNextFrame",
+            "recv": [],
+            "send": [
+                16,
+                38
+            ]
+        },
+        {
+            "code": 4,
+            "help": "Moves the *sequence* to a specific *cue*.",
+            "name": "MoveSequenceToCue",
+            "recv": [],
+            "send": [
+                16,
+                39
+            ]
+        },
+        {
+            "code": 7,
+            "help": "Moves the *sequence* to the next or previous *cue*.",
+            "name": "MoveSequenceToNextCue",
+            "recv": [],
+            "send": [
+                16,
+                38
+            ]
+        },
+        {
+            "code": 8,
+            "help": "Sets the *sequence*'s *opacity*.",
+            "name": "SetSequenceTransparency",
+            "recv": [],
+            "send": [
+                16,
+                40
+            ]
+        },
+        {
+            "code": 91,
+            "help": "Gets the *sequence*'s *opacity*.",
+            "name": "GetSequenceTransparency",
+            "recv": [
+                40
+            ],
+            "send": [
+                16
+            ]
+        },
+        {
+            "code": 41,
+            "help": "Sets the *smpte* *timecode-mode* of a *sequence*.",
+            "name": "SetSequenceSMTPETimeCodeMode",
+            "recv": [],
+            "send": [
+                16,
+                41
+            ]
+        },
+        {
+            "code": 42,
+            "help": "Sets the *smpte* *timecode-offset* of a *sequence*.",
+            "name": "SetSequenceSMTPETimeCodeOffset",
+            "recv": [],
+            "send": [
+                16,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 43,
+            "help": "Sets the *smpte* *timecode-stop-action* of a *sequence*.",
+            "name": "SetSequenceSMTPETimeCodeStopAction",
+            "recv": [],
+            "send": [
+                16,
+                42
+            ]
+        },
+        {
+            "code": 9,
+            "help": "Resets all *site*s and *device*s.",
+            "name": "ResetAll",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 10,
+            "help": "Resets all *device*s of a specific *site*.",
+            "name": "ResetSite",
+            "recv": [],
+            "send": [
+                1
+            ]
+        },
+        {
+            "code": 11,
+            "help": "Resets a specific *device*.",
+            "name": "ResetDevice",
+            "recv": [],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 12,
+            "help": "Resets a specific *parameter*.",
+            "name": "ResetParam",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "code": 35,
+            "help": null,
+            "name": "SetAllActive",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 36,
+            "help": null,
+            "name": "SetSiteActive",
+            "recv": [],
+            "send": [
+                1
+            ]
+        },
+        {
+            "code": 37,
+            "help": null,
+            "name": "SetDeviceActive",
+            "recv": [],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 38,
+            "help": null,
+            "name": "SetParamActive",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "code": 13,
+            "help": null,
+            "name": "ClearAllActive",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 14,
+            "help": null,
+            "name": "ClearActiveSite",
+            "recv": [],
+            "send": [
+                1
+            ]
+        },
+        {
+            "code": 15,
+            "help": null,
+            "name": "ClearActiveDevice",
+            "recv": [],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 16,
+            "help": null,
+            "name": "ClearActiveParam",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "code": 17,
+            "help": null,
+            "name": "ToggleFullscreen",
+            "recv": [],
+            "send": [
+                1
+            ]
+        },
+        {
+            "code": 98,
+            "help": null,
+            "name": "SetParamRelativeDouble",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3,
+                7
+            ]
+        },
+        {
+            "code": 149,
+            "help": null,
+            "name": "SetParamRelativeExtended",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3,
+                7,
+                5,
+                6
+            ]
+        },
+        {
+            "code": 60,
+            "help": null,
+            "name": "SetParamRelativeInSelection",
+            "recv": [],
+            "send": [
+                3,
+                4
+            ]
+        },
+        {
+            "code": 101,
+            "help": null,
+            "name": "SetParamRelativeInSelectionDouble",
+            "recv": [],
+            "send": [
+                3,
+                7
+            ]
+        },
+        {
+            "code": 87,
+            "help": null,
+            "name": "AddContentToPath",
+            "recv": [],
+            "send": [
+                43,
+                1,
+                21,
+                22,
+                44
+            ]
+        },
+        {
+            "code": 153,
+            "help": null,
+            "name": "AddContentToTreeItem",
+            "recv": [],
+            "send": [
+                43,
+                1,
+                21,
+                22,
+                45
+            ]
+        },
+        {
+            "code": 63,
+            "help": null,
+            "name": "AddContentFromLocalNode",
+            "recv": [],
+            "send": [
+                43,
+                46,
+                47
+            ]
+        },
+        {
+            "code": 135,
+            "help": null,
+            "name": "AddContentFromLocalNodeToPath",
+            "recv": [],
+            "send": [
+                43,
+                44,
+                46,
+                47
+            ]
+        },
+        {
+            "code": 154,
+            "help": null,
+            "name": "AddContentFromLocalNodeToTreeItem",
+            "recv": [],
+            "send": [
+                43,
+                45,
+                46,
+                47
+            ]
+        },
+        {
+            "code": 124,
+            "help": null,
+            "name": "AddContentFromFolder",
+            "recv": [],
+            "send": [
+                48,
+                1,
+                21,
+                22,
+                29
+            ]
+        },
+        {
+            "code": 133,
+            "help": null,
+            "name": "AddContentFromLocalNodeFolder",
+            "recv": [],
+            "send": [
+                48,
+                46,
+                47
+            ]
+        },
+        {
+            "code": 134,
+            "help": null,
+            "name": "AddContentFromLocalNodeFolderToPath",
+            "recv": [],
+            "send": [
+                49,
+                44,
+                46,
+                47
+            ]
+        },
+        {
+            "code": 155,
+            "help": null,
+            "name": "AddContentFolderFromLocalNodeToTreeItem",
+            "recv": [],
+            "send": [
+                49,
+                45,
+                46,
+                47
+            ]
+        },
+        {
+            "code": 20,
+            "help": null,
+            "name": "RemoveMediaById",
+            "recv": [],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 21,
+            "help": null,
+            "name": "RemoveMeshById",
+            "recv": [],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 125,
+            "help": null,
+            "name": "RemoveContentByName",
+            "recv": [],
+            "send": [
+                28,
+                50
+            ]
+        },
+        {
+            "code": 156,
+            "help": null,
+            "name": "RemoveTreeItem",
+            "recv": [],
+            "send": [
+                45
+            ]
+        },
+        {
+            "code": 126,
+            "help": null,
+            "name": "RemoveAllResources",
+            "recv": [],
+            "send": [
+                51
+            ]
+        },
+        {
+            "code": 234,
+            "help": null,
+            "name": "SetContentId",
+            "recv": [],
+            "send": [
+                28,
+                46,
+                47
+            ]
+        },
+        {
+            "code": 22,
+            "help": null,
+            "name": "SpreadAll",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 23,
+            "help": null,
+            "name": "SpreadMediaById",
+            "recv": [],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 24,
+            "help": null,
+            "name": "SpreadMeshById",
+            "recv": [],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 44,
+            "help": null,
+            "name": "ReloadMediaById",
+            "recv": [],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 45,
+            "help": null,
+            "name": "ReloadMeshById",
+            "recv": [],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 147,
+            "help": null,
+            "name": "ReloadResource",
+            "recv": [],
+            "send": [
+                28
+            ]
+        },
+        {
+            "code": 148,
+            "help": null,
+            "name": "SpreadResource",
+            "recv": [],
+            "send": [
+                28
+            ]
+        },
+        {
+            "code": 159,
+            "help": null,
+            "name": "ReloadAndSpreadResourceByPath",
+            "recv": [],
+            "send": [
+                28
+            ]
+        },
+        {
+            "code": 160,
+            "help": null,
+            "name": "ReloadAndSpreadResourceByTreeItem",
+            "recv": [],
+            "send": [
+                45
+            ]
+        },
+        {
+            "code": 161,
+            "help": null,
+            "name": "ReloadAndSpreadResourceByDmxId",
+            "recv": [],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 34,
+            "help": null,
+            "name": "RemoveInconsistent",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 170,
+            "help": null,
+            "name": "RemoveAssetOnSite",
+            "recv": [],
+            "send": [
+                28,
+                1
+            ]
+        },
+        {
+            "code": 171,
+            "help": null,
+            "name": "RemoveAssetOnSiteById",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                1
+            ]
+        },
+        {
+            "code": 172,
+            "help": null,
+            "name": "RemoveAssetOnSiteByTreeItem",
+            "recv": [],
+            "send": [
+                45,
+                1
+            ]
+        },
+        {
+            "code": 173,
+            "help": null,
+            "name": "AttachAssetOnSite",
+            "recv": [],
+            "send": [
+                52,
+                28,
+                1
+            ]
+        },
+        {
+            "code": 174,
+            "help": null,
+            "name": "AttachAssetOnSiteByDmxId",
+            "recv": [],
+            "send": [
+                52,
+                21,
+                22,
+                1
+            ]
+        },
+        {
+            "code": 175,
+            "help": null,
+            "name": "AttachAssetOnSiteByTreeItem",
+            "recv": [],
+            "send": [
+                52,
+                45,
+                1
+            ]
+        },
+        {
+            "code": 25,
+            "help": null,
+            "name": "StoreActive",
+            "recv": [],
+            "send": [
+                16
+            ]
+        },
+        {
+            "code": 26,
+            "help": null,
+            "name": "StoreActiveToTime",
+            "recv": [],
+            "send": [
+                16,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 27,
+            "help": null,
+            "name": "SetMediaFrameBlendingById",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                53
+            ]
+        },
+        {
+            "code": 28,
+            "help": null,
+            "name": "SetMediaDeinterlacingById",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                54
+            ]
+        },
+        {
+            "code": 29,
+            "help": null,
+            "name": "SetMediaAnisotropicFilteringById",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                55
+            ]
+        },
+        {
+            "code": 30,
+            "help": null,
+            "name": "SetMediaUnderscanById",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                56
+            ]
+        },
+        {
+            "code": 31,
+            "help": null,
+            "name": "SetMediaMpegColourSpaceById",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                57
+            ]
+        },
+        {
+            "code": 32,
+            "help": null,
+            "name": "SetMediaAlphaChannelById",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                58
+            ]
+        },
+        {
+            "code": 52,
+            "help": null,
+            "name": "CreateTextInput",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                186
+            ]
+        },
+        {
+            "code": 33,
+            "help": null,
+            "name": "SetText",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                186
+            ]
+        },
+        {
+            "code": 46,
+            "help": null,
+            "name": "LoadProject",
+            "recv": [],
+            "send": [
+                60,
+                61,
+                62
+            ]
+        },
+        {
+            "code": 47,
+            "help": null,
+            "name": "CloseProject",
+            "recv": [],
+            "send": [
+                63
+            ]
+        },
+        {
+            "code": 48,
+            "help": null,
+            "name": "ClearSelection",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 49,
+            "help": null,
+            "name": "SetDeviceAcceptDmxById",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                64
+            ]
+        },
+        {
+            "code": 50,
+            "help": null,
+            "name": "SetSiteAcceptDmxById",
+            "recv": [],
+            "send": [
+                1,
+                64
+            ]
+        },
+        {
+            "code": 51,
+            "help": null,
+            "name": "SetDeviceDmxAddressById",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                65,
+                66,
+                67
+            ]
+        },
+        {
+            "code": 235,
+            "help": null,
+            "name": "SetSiteDmxAddressById",
+            "recv": [],
+            "send": [
+                1,
+                65,
+                66,
+                67
+            ]
+        },
+        {
+            "code": 53,
+            "help": null,
+            "name": "SetCuePlayMode",
+            "recv": [],
+            "send": [
+                16,
+                39,
+                68
+            ]
+        },
+        {
+            "code": 54,
+            "help": null,
+            "name": "SetNextCuePlayMode",
+            "recv": [],
+            "send": [
+                16,
+                68
+            ]
+        },
+        {
+            "code": 55,
+            "help": null,
+            "name": "SetIgnoreNextCue",
+            "recv": [],
+            "send": [
+                16,
+                69
+            ]
+        },
+        {
+            "code": 62,
+            "help": null,
+            "name": "SaveProject",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 64,
+            "help": null,
+            "name": "SetIsSiteFullscreen",
+            "recv": [],
+            "send": [
+                1,
+                70
+            ]
+        },
+        {
+            "code": 65,
+            "help": null,
+            "name": "SetIsSiteFullscreenByIp",
+            "recv": [],
+            "send": [
+                71,
+                70
+            ]
+        },
+        {
+            "code": 66,
+            "help": null,
+            "name": "SetTextTextureSize",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                72,
+                73
+            ]
+        },
+        {
+            "code": 67,
+            "help": null,
+            "name": "SetTextProperties",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80
+            ]
+        },
+        {
+            "code": 68,
+            "help": null,
+            "name": "SetTextCenterOnTexture",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                81
+            ]
+        },
+        {
+            "code": 69,
+            "help": null,
+            "name": "CreateTextInputWide",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                59
+            ]
+        },
+        {
+            "code": 70,
+            "help": null,
+            "name": "SetTextWide",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                59
+            ]
+        },
+        {
+            "code": 71,
+            "help": null,
+            "name": "SetSiteIpById",
+            "recv": [],
+            "send": [
+                1,
+                82
+            ]
+        },
+        {
+            "code": 77,
+            "help": null,
+            "name": "GetClipRemainingTime",
+            "recv": [
+                17,
+                18,
+                19,
+                20
+            ],
+            "send": [
+                1,
+                2,
+                16
+            ]
+        },
+        {
+            "code": 78,
+            "help": null,
+            "name": "GetRemainingTimeUntilNextCue",
+            "recv": [
+                17,
+                18,
+                19,
+                20
+            ],
+            "send": [
+                16
+            ]
+        },
+        {
+            "code": 82,
+            "help": null,
+            "name": "GetResourceCount",
+            "recv": [
+                83
+            ],
+            "send": []
+        },
+        {
+            "code": 150,
+            "help": null,
+            "name": "GetTreeItemCount",
+            "recv": [
+                84
+            ],
+            "send": []
+        },
+        {
+            "code": 83,
+            "help": null,
+            "name": "CreateProjectFolder",
+            "recv": [],
+            "send": [
+                85
+            ]
+        },
+        {
+            "code": 122,
+            "help": null,
+            "name": "CreateProjectFolderInPath",
+            "recv": [],
+            "send": [
+                85,
+                29
+            ]
+        },
+        {
+            "code": 157,
+            "help": null,
+            "name": "CreateProjectFolderInTreeItem",
+            "recv": [],
+            "send": [
+                85,
+                45
+            ]
+        },
+        {
+            "code": 123,
+            "help": null,
+            "name": "RemoveFolderFromProject",
+            "recv": [],
+            "send": [
+                29
+            ]
+        },
+        {
+            "code": 86,
+            "help": null,
+            "name": "SetDeviceSelection",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                88
+            ]
+        },
+        {
+            "code": 90,
+            "help": null,
+            "name": "SetClxControllerFaderMapping",
+            "recv": [],
+            "send": [
+                89,
+                16
+            ]
+        },
+        {
+            "code": 92,
+            "help": null,
+            "name": "SetClxControllerCueMapping",
+            "recv": [],
+            "send": [
+                90,
+                16,
+                39
+            ]
+        },
+        {
+            "code": 93,
+            "help": null,
+            "name": "CreateCue",
+            "recv": [],
+            "send": [
+                16,
+                39,
+                17,
+                18,
+                19,
+                20,
+                211,
+                91
+            ]
+        },
+        {
+            "code": 94,
+            "help": null,
+            "name": "RemoveCueById",
+            "recv": [],
+            "send": [
+                16,
+                39
+            ]
+        },
+        {
+            "code": 95,
+            "help": null,
+            "name": "RemoveAllCues",
+            "recv": [],
+            "send": [
+                16
+            ]
+        },
+        {
+            "code": 110,
+            "help": null,
+            "name": "CreateVideoLayerGetId",
+            "recv": [
+                93
+            ],
+            "send": [
+                1,
+                92
+            ]
+        },
+        {
+            "code": 97,
+            "help": null,
+            "name": "RemoveLayer",
+            "recv": [],
+            "send": [
+                1,
+                93,
+                92
+            ]
+        },
+        {
+            "code": 102,
+            "help": null,
+            "name": "SetIsBackup",
+            "recv": [],
+            "send": [
+                94
+            ]
+        },
+        {
+            "code": 103,
+            "help": null,
+            "name": "ApplyView",
+            "recv": [],
+            "send": [
+                95
+            ]
+        },
+        {
+            "code": 104,
+            "help": null,
+            "name": "SetSpareFromSpread",
+            "recv": [],
+            "send": [
+                1,
+                96
+            ]
+        },
+        {
+            "code": 105,
+            "help": null,
+            "name": "GetParamResource",
+            "recv": [
+                21,
+                22,
+                43,
+                99
+            ],
+            "send": [
+                1,
+                2,
+                97,
+                3
+            ]
+        },
+        {
+            "code": 108,
+            "help": null,
+            "name": "GetMediaTransportMode",
+            "recv": [
+                32
+            ],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 109,
+            "help": null,
+            "name": "GetIsSiteConnected",
+            "recv": [
+                101
+            ],
+            "send": [
+                1
+            ]
+        },
+        {
+            "code": 111,
+            "help": null,
+            "name": "MoveLayerUp",
+            "recv": [],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 112,
+            "help": null,
+            "name": "MoveLayerDown",
+            "recv": [],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 113,
+            "help": null,
+            "name": "MoveLayerToFirstPosition",
+            "recv": [],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 114,
+            "help": null,
+            "name": "MoveLayerToLastPosition",
+            "recv": [],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 117,
+            "help": null,
+            "name": "SetEnableClxController",
+            "recv": [],
+            "send": [
+                102,
+                94
+            ]
+        },
+        {
+            "code": 116,
+            "help": null,
+            "name": "GetEnableClxController",
+            "recv": [
+                103
+            ],
+            "send": [
+                102
+            ]
+        },
+        {
+            "code": 118,
+            "help": null,
+            "name": "SetSequenceCueWaitTime",
+            "recv": [],
+            "send": [
+                16,
+                39,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 119,
+            "help": null,
+            "name": "SetSequenceCueJumpTargetTime",
+            "recv": [],
+            "send": [
+                16,
+                39,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 120,
+            "help": null,
+            "name": "SetCueJumpCount",
+            "recv": [],
+            "send": [
+                16,
+                39,
+                104
+            ]
+        },
+        {
+            "code": 121,
+            "help": null,
+            "name": "ResetCueTriggerCount",
+            "recv": [],
+            "send": [
+                16,
+                39
+            ]
+        },
+        {
+            "code": 127,
+            "help": null,
+            "name": "GetIsContentConsistent",
+            "recv": [
+                105
+            ],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 128,
+            "help": null,
+            "name": "GetIsContentConsistentByName",
+            "recv": [
+                105
+            ],
+            "send": [
+                28
+            ]
+        },
+        {
+            "code": 130,
+            "help": null,
+            "name": "CreateSequenceGetId",
+            "recv": [
+                16
+            ],
+            "send": []
+        },
+        {
+            "code": 131,
+            "help": null,
+            "name": "RemoveSequence",
+            "recv": [],
+            "send": [
+                16
+            ]
+        },
+        {
+            "code": 136,
+            "help": null,
+            "name": "SendMouseInput",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                107,
+                108,
+                109,
+                110
+            ]
+        },
+        {
+            "code": 233,
+            "help": null,
+            "name": "SendMouseScroll",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                111
+            ]
+        },
+        {
+            "code": 146,
+            "help": null,
+            "name": "SendTouchInput",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                112,
+                113,
+                108,
+                109,
+                110
+            ]
+        },
+        {
+            "code": 137,
+            "help": null,
+            "name": "SendKeyboardInput",
+            "recv": [],
+            "send": [
+                1,
+                114,
+                115
+            ]
+        },
+        {
+            "code": 138,
+            "help": null,
+            "name": "SetShowCursorInFullscreen",
+            "recv": [],
+            "send": [
+                1,
+                116
+            ]
+        },
+        {
+            "code": 145,
+            "help": null,
+            "name": "SetNodeOfSiteIsAudioClockMaster",
+            "recv": [],
+            "send": [
+                1,
+                119
+            ]
+        },
+        {
+            "code": 164,
+            "help": null,
+            "name": "AddEncryptionKeyGetId",
+            "recv": [
+                121
+            ],
+            "send": [
+                120
+            ]
+        },
+        {
+            "code": 165,
+            "help": null,
+            "name": "AddEncryptionPolicyGetId",
+            "recv": [
+                121
+            ],
+            "send": [
+                122
+            ]
+        },
+        {
+            "code": 166,
+            "help": null,
+            "name": "SetRouteInputToLayer",
+            "recv": [],
+            "send": [
+                1,
+                123
+            ]
+        },
+        {
+            "code": 167,
+            "help": null,
+            "name": "SetRouteInputToAutomation",
+            "recv": [],
+            "send": [
+                1,
+                124
+            ]
+        },
+        {
+            "code": 168,
+            "help": null,
+            "name": "SetEnableOutputForPicking",
+            "recv": [],
+            "send": [
+                1,
+                125,
+                126
+            ]
+        },
+        {
+            "code": 169,
+            "help": null,
+            "name": "SetASIOMasterVolume",
+            "recv": [],
+            "send": [
+                1,
+                127
+            ]
+        },
+        {
+            "code": 162,
+            "help": null,
+            "name": "GetThumbnailByPath",
+            "recv": [
+                129,
+                130,
+                131
+            ],
+            "send": [
+                28
+            ]
+        },
+        {
+            "code": 163,
+            "help": null,
+            "name": "GetThumbnailByItemIndex",
+            "recv": [
+                129,
+                130,
+                131
+            ],
+            "send": [
+                45
+            ]
+        },
+        {
+            "code": 176,
+            "help": null,
+            "name": "CreatePlaylist",
+            "recv": [],
+            "send": [
+                132,
+                21,
+                22
+            ]
+        },
+        {
+            "code": 177,
+            "help": null,
+            "name": "CreatePlaylistInPath",
+            "recv": [],
+            "send": [
+                44,
+                132,
+                21,
+                22
+            ]
+        },
+        {
+            "code": 178,
+            "help": null,
+            "name": "CreatePlaylistInItemId",
+            "recv": [],
+            "send": [
+                45,
+                135,
+                136,
+                137
+            ]
+        },
+        {
+            "code": 179,
+            "help": null,
+            "name": "CreatePlaylistInPathFromFolder",
+            "recv": [],
+            "send": [
+                44,
+                139,
+                135,
+                136,
+                137
+            ]
+        },
+        {
+            "code": 180,
+            "help": null,
+            "name": "CreatePlaylistInTreeItemFromFolder",
+            "recv": [],
+            "send": [
+                45,
+                140,
+                135,
+                136,
+                137
+            ]
+        },
+        {
+            "code": 181,
+            "help": null,
+            "name": "PushBackPlaylistEntryByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                143,
+                144
+            ]
+        },
+        {
+            "code": 182,
+            "help": null,
+            "name": "PushBackPlaylistEntryByPath",
+            "recv": [],
+            "send": [
+                145,
+                99
+            ]
+        },
+        {
+            "code": 183,
+            "help": null,
+            "name": "PushBackPlaylistEntryByItemId",
+            "recv": [],
+            "send": [
+                147,
+                148
+            ]
+        },
+        {
+            "code": 184,
+            "help": null,
+            "name": "InsertPlaylistEntryByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                143,
+                144,
+                65
+            ]
+        },
+        {
+            "code": 185,
+            "help": null,
+            "name": "InsertPlaylistEntryByPath",
+            "recv": [],
+            "send": [
+                145,
+                99,
+                65
+            ]
+        },
+        {
+            "code": 186,
+            "help": null,
+            "name": "InsertPlaylistEntryByItemId",
+            "recv": [],
+            "send": [
+                147,
+                148,
+                65
+            ]
+        },
+        {
+            "code": 187,
+            "help": null,
+            "name": "RemovePlaylistEntryByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                65
+            ]
+        },
+        {
+            "code": 188,
+            "help": null,
+            "name": "RemovePlaylistEntryByPath",
+            "recv": [],
+            "send": [
+                145,
+                65
+            ]
+        },
+        {
+            "code": 189,
+            "help": null,
+            "name": "RemovePlaylistEntryByItemId",
+            "recv": [],
+            "send": [
+                147,
+                65
+            ]
+        },
+        {
+            "code": 190,
+            "help": null,
+            "name": "GetPlaylistSizeByDmxId",
+            "recv": [
+                149
+            ],
+            "send": [
+                141,
+                142
+            ]
+        },
+        {
+            "code": 191,
+            "help": null,
+            "name": "GetPlaylistSizeByPath",
+            "recv": [
+                149
+            ],
+            "send": [
+                145
+            ]
+        },
+        {
+            "code": 192,
+            "help": null,
+            "name": "GetPlaylistSizeByItemId",
+            "recv": [
+                149
+            ],
+            "send": [
+                147
+            ]
+        },
+        {
+            "code": 199,
+            "help": null,
+            "name": "SetPlaylistEntryIndexByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                65,
+                150
+            ]
+        },
+        {
+            "code": 200,
+            "help": null,
+            "name": "SetPlaylistEntryIndexByPath",
+            "recv": [],
+            "send": [
+                145,
+                65,
+                150
+            ]
+        },
+        {
+            "code": 201,
+            "help": null,
+            "name": "SetPlaylistEntryIndexByItemId",
+            "recv": [],
+            "send": [
+                147,
+                65,
+                150
+            ]
+        },
+        {
+            "code": 202,
+            "help": null,
+            "name": "SetPlaylistEntryDurationByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 203,
+            "help": null,
+            "name": "SetPlaylistEntryDurationByPath",
+            "recv": [],
+            "send": [
+                145,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 204,
+            "help": null,
+            "name": "SetPlaylistEntryDurationByItemId",
+            "recv": [],
+            "send": [
+                147,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 205,
+            "help": null,
+            "name": "SetPlaylistEntryFadeOutTimeByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 206,
+            "help": null,
+            "name": "SetPlaylistEntryFadeOutTimeByPath",
+            "recv": [],
+            "send": [
+                145,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 207,
+            "help": null,
+            "name": "SetPlaylistEntryFadeOutTimeByItemId",
+            "recv": [],
+            "send": [
+                147,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 208,
+            "help": null,
+            "name": "SetPlaylistEntryInPointByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 210,
+            "help": null,
+            "name": "SetPlaylistEntryInPointByPath",
+            "recv": [],
+            "send": [
+                145,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 211,
+            "help": null,
+            "name": "SetPlaylistEntryInPointByItemId",
+            "recv": [],
+            "send": [
+                147,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 212,
+            "help": null,
+            "name": "SetPlaylistEntryOutPointByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 213,
+            "help": null,
+            "name": "SetPlaylistEntryOutPointByPath",
+            "recv": [],
+            "send": [
+                145,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 214,
+            "help": null,
+            "name": "SetPlaylistEntryOutPointByItemId",
+            "recv": [],
+            "send": [
+                147,
+                65,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 215,
+            "help": null,
+            "name": "SetPlaylistEntryTransitionByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                65,
+                151
+            ]
+        },
+        {
+            "code": 216,
+            "help": null,
+            "name": "SetPlaylistEntryTransitionByPath",
+            "recv": [],
+            "send": [
+                145,
+                65,
+                151
+            ]
+        },
+        {
+            "code": 217,
+            "help": null,
+            "name": "SetPlaylistEntryTransitionByItemId",
+            "recv": [],
+            "send": [
+                147,
+                65,
+                151
+            ]
+        },
+        {
+            "code": 218,
+            "help": null,
+            "name": "SetPlaylistEntryNoteByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                65,
+                152
+            ]
+        },
+        {
+            "code": 219,
+            "help": null,
+            "name": "SetPlaylistEntryNoteByPath",
+            "recv": [],
+            "send": [
+                145,
+                65,
+                152
+            ]
+        },
+        {
+            "code": 220,
+            "help": null,
+            "name": "SetPlaylistEntryNoteByItemId",
+            "recv": [],
+            "send": [
+                147,
+                65,
+                152
+            ]
+        },
+        {
+            "code": 222,
+            "help": null,
+            "name": "RecordLiveInputByDmxId",
+            "recv": [],
+            "send": [
+                153,
+                154,
+                155,
+                156,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 223,
+            "help": null,
+            "name": "RecordLiveInputStartByDmxId",
+            "recv": [],
+            "send": [
+                153,
+                154,
+                155,
+                156
+            ]
+        },
+        {
+            "code": 225,
+            "help": null,
+            "name": "RecordLiveInputByName",
+            "recv": [],
+            "send": [
+                161,
+                155,
+                156,
+                17,
+                18,
+                19,
+                20
+            ]
+        },
+        {
+            "code": 226,
+            "help": null,
+            "name": "RecordLiveInputStartByName",
+            "recv": [],
+            "send": [
+                161,
+                155,
+                156
+            ]
+        },
+        {
+            "code": 227,
+            "help": null,
+            "name": "ExportVideo",
+            "recv": [],
+            "send": [
+                155,
+                156,
+                16,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169
+            ]
+        },
+        {
+            "code": 228,
+            "help": null,
+            "name": "EncodeFileByName",
+            "recv": [],
+            "send": [
+                99,
+                170
+            ]
+        },
+        {
+            "code": 230,
+            "help": null,
+            "name": "EncodeFileByDmxId",
+            "recv": [],
+            "send": [
+                153,
+                154,
+                170
+            ]
+        },
+        {
+            "code": 229,
+            "help": null,
+            "name": "EncodeFileToPath",
+            "recv": [],
+            "send": [
+                99,
+                44,
+                171,
+                170
+            ]
+        },
+        {
+            "code": 231,
+            "help": null,
+            "name": "EncodeFileByDmxId",
+            "recv": [],
+            "send": [
+                153,
+                154,
+                44,
+                171,
+                170
+            ]
+        },
+        {
+            "code": 239,
+            "help": null,
+            "name": "SetCanvasResolutionByDmxId",
+            "recv": [],
+            "send": [
+                172,
+                173,
+                72,
+                73
+            ]
+        },
+        {
+            "code": 240,
+            "help": null,
+            "name": "SetCanvasResolutionByPath",
+            "recv": [],
+            "send": [
+                174,
+                72,
+                73
+            ]
+        },
+        {
+            "code": 241,
+            "help": null,
+            "name": "SetCanvasResolutionByItemId",
+            "recv": [],
+            "send": [
+                175,
+                72,
+                73
+            ]
+        },
+        {
+            "code": 242,
+            "help": null,
+            "name": "ClearCanvasByDmxId",
+            "recv": [],
+            "send": [
+                172,
+                173
+            ]
+        },
+        {
+            "code": 243,
+            "help": null,
+            "name": "ClearCanvasByPath",
+            "recv": [],
+            "send": [
+                174
+            ]
+        },
+        {
+            "code": 244,
+            "help": null,
+            "name": "ClearCanvasByItemId",
+            "recv": [],
+            "send": [
+                175
+            ]
+        },
+        {
+            "code": 245,
+            "help": null,
+            "name": "ExecuteCanvasCmdByDmxId",
+            "recv": [],
+            "send": [
+                172,
+                173,
+                177,
+                178
+            ]
+        },
+        {
+            "code": 246,
+            "help": null,
+            "name": "ExecuteCanvasCmdByPath",
+            "recv": [],
+            "send": [
+                174,
+                177,
+                178
+            ]
+        },
+        {
+            "code": 247,
+            "help": null,
+            "name": "ExecuteCanvasCmdByItemId",
+            "recv": [],
+            "send": [
+                175,
+                177,
+                178
+            ]
+        },
+        {
+            "code": 248,
+            "help": null,
+            "name": "GetCanvasDrawCommandsByDmxId",
+            "recv": [
+                179
+            ],
+            "send": [
+                172,
+                173
+            ]
+        },
+        {
+            "code": 249,
+            "help": null,
+            "name": "GetCanvasDrawCommandsByPath",
+            "recv": [
+                179
+            ],
+            "send": [
+                174
+            ]
+        },
+        {
+            "code": 250,
+            "help": null,
+            "name": "GetCanvasDrawCommandsByItemId",
+            "recv": [
+                179
+            ],
+            "send": [
+                175
+            ]
+        },
+        {
+            "code": 251,
+            "help": null,
+            "name": "GetMediaWidthByDmxId",
+            "recv": [
+                72
+            ],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 252,
+            "help": null,
+            "name": "GetMediaWidthByPath",
+            "recv": [
+                72
+            ],
+            "send": [
+                60
+            ]
+        },
+        {
+            "code": 253,
+            "help": null,
+            "name": "GetMediaWidthByItemId",
+            "recv": [
+                72
+            ],
+            "send": [
+                180
+            ]
+        },
+        {
+            "code": 254,
+            "help": null,
+            "name": "GetMediaHeightByDmxId",
+            "recv": [
+                73
+            ],
+            "send": [
+                21,
+                22
+            ]
+        },
+        {
+            "code": 255,
+            "help": null,
+            "name": "GetMediaHeightByPath",
+            "recv": [
+                73
+            ],
+            "send": [
+                60
+            ]
+        },
+        {
+            "code": 256,
+            "help": null,
+            "name": "GetMediaHeightByItemId",
+            "recv": [
+                73
+            ],
+            "send": [
+                180
+            ]
+        },
+        {
+            "code": 257,
+            "help": null,
+            "name": "GetProjectPathOnDisc",
+            "recv": [
+                179
+            ],
+            "send": []
+        },
+        {
+            "code": 258,
+            "help": null,
+            "name": "SaveProjectAs",
+            "recv": [],
+            "send": [
+                60,
+                61
+            ]
+        },
+        {
+            "code": 259,
+            "help": null,
+            "name": "SaveProjectCopy",
+            "recv": [],
+            "send": [
+                60,
+                61
+            ]
+        },
+        {
+            "code": 260,
+            "help": null,
+            "name": "BundleProject",
+            "recv": [],
+            "send": [
+                181,
+                182
+            ]
+        },
+        {
+            "code": 261,
+            "help": null,
+            "name": "SetResourceNameByPath",
+            "recv": [],
+            "send": [
+                99,
+                183
+            ]
+        },
+        {
+            "code": 263,
+            "help": null,
+            "name": "SetResourceNameByItemIndex",
+            "recv": [],
+            "send": [
+                45,
+                183
+            ]
+        },
+        {
+            "code": 262,
+            "help": null,
+            "name": "SetResourceNameByDmxId",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                183
+            ]
+        },
+        {
+            "code": 265,
+            "help": null,
+            "name": "SendCanvasCmdsToStackByDmxId",
+            "recv": [],
+            "send": [
+                172,
+                173,
+                184
+            ]
+        },
+        {
+            "code": 266,
+            "help": null,
+            "name": "SetAddCanvasCmdsToStackByPath",
+            "recv": [],
+            "send": [
+                174,
+                184
+            ]
+        },
+        {
+            "code": 267,
+            "help": null,
+            "name": "SetAddCanvasCmdsToStackByItemId",
+            "recv": [],
+            "send": [
+                175,
+                184
+            ]
+        },
+        {
+            "code": 268,
+            "help": null,
+            "name": "ClearEmptyPlaylistEntriesByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142
+            ]
+        },
+        {
+            "code": 269,
+            "help": null,
+            "name": "ClearEmptyPlaylistEntriesByPath",
+            "recv": [],
+            "send": [
+                145
+            ]
+        },
+        {
+            "code": 270,
+            "help": null,
+            "name": "ClearEmptyPlaylistEntriesByItemId",
+            "recv": [],
+            "send": [
+                147
+            ]
+        },
+        {
+            "code": 271,
+            "help": null,
+            "name": "ClearAllPlaylistEntriesByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142
+            ]
+        },
+        {
+            "code": 272,
+            "help": null,
+            "name": "ClearAllPlaylistEntriesByPath",
+            "recv": [],
+            "send": [
+                145
+            ]
+        },
+        {
+            "code": 273,
+            "help": null,
+            "name": "ClearAllPlaylistEntriesByItemIndex",
+            "recv": [],
+            "send": [
+                147
+            ]
+        },
+        {
+            "code": 274,
+            "help": null,
+            "name": "SetSublayerParamOfKindDouble",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                191,
+                11,
+                7,
+                5,
+                6
+            ]
+        },
+        {
+            "code": 275,
+            "help": null,
+            "name": "HandleSublayer",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                187,
+                188
+            ]
+        },
+        {
+            "code": 276,
+            "help": null,
+            "name": "SetCueName",
+            "recv": [],
+            "send": [
+                16,
+                39,
+                189
+            ]
+        },
+        {
+            "code": 277,
+            "help": null,
+            "name": "GetCueName",
+            "recv": [
+                189
+            ],
+            "send": [
+                16,
+                39
+            ]
+        },
+        {
+            "code": 278,
+            "help": null,
+            "name": "StoreActiveSite",
+            "recv": [],
+            "send": [
+                16,
+                1
+            ]
+        },
+        {
+            "code": 279,
+            "help": null,
+            "name": "StoreActiveDevice",
+            "recv": [],
+            "send": [
+                16,
+                1,
+                2
+            ]
+        },
+        {
+            "code": 280,
+            "help": null,
+            "name": "StoreActiveParam",
+            "recv": [],
+            "send": [
+                16,
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "code": 282,
+            "help": null,
+            "name": "AssignDeviceByName",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                190,
+                3
+            ]
+        },
+        {
+            "code": 283,
+            "help": null,
+            "name": "AssignResourceToParam",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                21,
+                22,
+                25,
+                3
+            ]
+        },
+        {
+            "code": 284,
+            "help": null,
+            "name": "AddImageSequence",
+            "recv": [],
+            "send": [
+                49,
+                1,
+                21,
+                22,
+                192
+            ]
+        },
+        {
+            "code": 285,
+            "help": null,
+            "name": "AddImageSequenceToFolder",
+            "recv": [],
+            "send": [
+                49,
+                1,
+                21,
+                22,
+                192,
+                44
+            ]
+        },
+        {
+            "code": 286,
+            "help": null,
+            "name": "AddImageSequenceToTreeItem",
+            "recv": [],
+            "send": [
+                49,
+                1,
+                21,
+                22,
+                192,
+                45
+            ]
+        },
+        {
+            "code": 287,
+            "help": null,
+            "name": "AddImageSequenceFromLocalNode",
+            "recv": [],
+            "send": [
+                49,
+                192
+            ]
+        },
+        {
+            "code": 288,
+            "help": null,
+            "name": "AddImageSequenceFromLocalNodeId",
+            "recv": [],
+            "send": [
+                49,
+                192,
+                21,
+                22
+            ]
+        },
+        {
+            "code": 289,
+            "help": null,
+            "name": "AddImageSequenceFromLocalNodeToFolder",
+            "recv": [],
+            "send": [
+                49,
+                192,
+                44
+            ]
+        },
+        {
+            "code": 290,
+            "help": null,
+            "name": "AddImageSequenceFromLocalNodeToFolderId",
+            "recv": [],
+            "send": [
+                49,
+                192,
+                21,
+                22,
+                44
+            ]
+        },
+        {
+            "code": 291,
+            "help": null,
+            "name": "AddImageSequenceFromLocalNodeToTreeItem",
+            "recv": [],
+            "send": [
+                49,
+                192,
+                45
+            ]
+        },
+        {
+            "code": 292,
+            "help": null,
+            "name": "AddImageSequenceFromLocalNodeToTreeItemId",
+            "recv": [],
+            "send": [
+                49,
+                192,
+                21,
+                22,
+                45
+            ]
+        },
+        {
+            "code": 293,
+            "help": null,
+            "name": "SetTextFormatted",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                186,
+                193
+            ]
+        },
+        {
+            "code": 294,
+            "help": null,
+            "name": "SetTextFormattedWide",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                59,
+                193
+            ]
+        },
+        {
+            "code": 295,
+            "help": null,
+            "name": "GetCurrentTimeCueInfo",
+            "recv": [
+                17,
+                18,
+                19,
+                20,
+                206,
+                202,
+                194,
+                195,
+                196,
+                197,
+                204,
+                207,
+                203,
+                198,
+                199,
+                200,
+                201,
+                205
+            ],
+            "send": [
+                16
+            ]
+        },
+        {
+            "code": 296,
+            "help": null,
+            "name": "GetContentIsConsistentByTreeItem",
+            "recv": [],
+            "send": [
+                45
+            ]
+        },
+        {
+            "code": 297,
+            "help": null,
+            "name": "SpreadToSite",
+            "recv": [],
+            "send": [
+                99,
+                1
+            ]
+        },
+        {
+            "code": 298,
+            "help": null,
+            "name": "SetGroupSelection",
+            "recv": [],
+            "send": [
+                208,
+                88
+            ]
+        },
+        {
+            "code": 299,
+            "help": null,
+            "name": "SetSequenceSelection",
+            "recv": [],
+            "send": [
+                16
+            ]
+        },
+        {
+            "code": 300,
+            "help": null,
+            "name": "CreatePlaylistWithName",
+            "recv": [],
+            "send": [
+                132,
+                21,
+                22,
+                183
+            ]
+        },
+        {
+            "code": 301,
+            "help": null,
+            "name": "CreatePlaylistInPathWithName",
+            "recv": [],
+            "send": [
+                44,
+                132,
+                21,
+                22,
+                183
+            ]
+        },
+        {
+            "code": 302,
+            "help": null,
+            "name": "CreatePlaylistInItemIdWithName",
+            "recv": [],
+            "send": [
+                45,
+                135,
+                136,
+                137,
+                183
+            ]
+        },
+        {
+            "code": 303,
+            "help": null,
+            "name": "CreatePlaylistInPathFromFolderWithName",
+            "recv": [],
+            "send": [
+                44,
+                139,
+                135,
+                136,
+                137,
+                183
+            ]
+        },
+        {
+            "code": 304,
+            "help": null,
+            "name": "CreatePlaylistInTreeItemFromFolderWithName",
+            "recv": [],
+            "send": [
+                45,
+                140,
+                135,
+                136,
+                137,
+                183
+            ]
+        },
+        {
+            "code": 305,
+            "help": null,
+            "name": "SetWatchedFolderProperty",
+            "recv": [],
+            "send": [
+                44,
+                209,
+                94
+            ]
+        },
+        {
+            "code": 306,
+            "help": null,
+            "name": "SetWatchedFolderPropertyByItemId",
+            "recv": [],
+            "send": [
+                45,
+                209,
+                94
+            ]
+        },
+        {
+            "code": 307,
+            "help": null,
+            "name": "SetFolderSpreadToSite",
+            "recv": [],
+            "send": [
+                44,
+                1,
+                94
+            ]
+        },
+        {
+            "code": 308,
+            "help": null,
+            "name": "SetFolderSpreadToSiteByItemId",
+            "recv": [],
+            "send": [
+                45,
+                1,
+                94
+            ]
+        },
+        {
+            "code": 309,
+            "help": null,
+            "name": "ClearStreamingText",
+            "recv": [],
+            "send": [
+                21,
+                22,
+                210
+            ]
+        },
+        {
+            "code": 310,
+            "help": null,
+            "name": "GetWatchedFolderProperty",
+            "recv": [
+                103
+            ],
+            "send": [
+                44,
+                209
+            ]
+        },
+        {
+            "code": 311,
+            "help": null,
+            "name": "GetWatchedFolderPropertyByItemId",
+            "recv": [
+                103
+            ],
+            "send": [
+                45,
+                209
+            ]
+        },
+        {
+            "code": 312,
+            "help": null,
+            "name": "GetFolderSpreadToSite",
+            "recv": [
+                103
+            ],
+            "send": [
+                44,
+                1
+            ]
+        },
+        {
+            "code": 313,
+            "help": null,
+            "name": "GetFolderSpreadToSiteByItemId",
+            "recv": [
+                103
+            ],
+            "send": [
+                45,
+                1
+            ]
+        },
+        {
+            "code": 314,
+            "help": null,
+            "name": "InsertPlaylistEntryWithParametersByDmxId",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 315,
+            "help": " ",
+            "name": "InsertPlaylistEntryWithParametersByPath",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 316,
+            "help": " ",
+            "name": "InsertPlaylistEntryWithParametersByTreeItem",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 18,
+            "help": " ",
+            "name": "SetParamRelative",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "code": 19,
+            "help": null,
+            "name": "AddContent",
+            "recv": [],
+            "send": [
+                43,
+                1,
+                21,
+                22,
+                212
+            ]
+        },
+        {
+            "code": 76,
+            "help": null,
+            "name": "GetMediaInfo",
+            "recv": [
+                21,
+                22,
+                213,
+                99,
+                44,
+                72,
+                73,
+                192,
+                17,
+                18,
+                19,
+                20,
+                214
+            ],
+            "send": [
+                244
+            ]
+        },
+        {
+            "code": 314,
+            "help": null,
+            "name": "InsertPlaylistEntryWithParametersByDmxId",
+            "recv": [],
+            "send": [
+                141,
+                142,
+                143,
+                144,
+                65,
+                217,
+                216,
+                215,
+                218,
+                221,
+                220,
+                219,
+                222,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                151
+            ]
+        },
+        {
+            "code": 315,
+            "help": null,
+            "name": "InsertPlaylistEntryWithParametersByPath",
+            "recv": [],
+            "send": [
+                145,
+                99,
+                65,
+                217,
+                216,
+                215,
+                218,
+                221,
+                220,
+                219,
+                222,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                151
+            ]
+        },
+        {
+            "code": 316,
+            "help": null,
+            "name": "InsertPlaylistEntryWithParametersByTreeItem",
+            "recv": [],
+            "send": [
+                147,
+                148,
+                65,
+                217,
+                216,
+                215,
+                218,
+                221,
+                220,
+                219,
+                222,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                151
+            ]
+        },
+        {
+            "code": 323,
+            "help": null,
+            "name": "SetYawPitchRoll",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                223,
+                224,
+                225,
+                226,
+                5,
+                6
+            ]
+        },
+        {
+            "code": 324,
+            "help": null,
+            "name": "GetYawPitchRoll",
+            "recv": [
+                224,
+                225,
+                226
+            ],
+            "send": [
+                1,
+                2,
+                223
+            ]
+        },
+        {
+            "code": 317,
+            "help": null,
+            "name": "GetSiteIds",
+            "recv": [
+                230
+            ],
+            "send": []
+        },
+        {
+            "code": 341,
+            "help": null,
+            "name": "SetCompositingPassRenderTargetSize",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                72,
+                73
+            ]
+        },
+        {
+            "code": 342,
+            "help": null,
+            "name": "SetSoftedgeIsWarped",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                228
+            ]
+        },
+        {
+            "code": 338,
+            "help": null,
+            "name": "SetCanvasTextureFormatByDmxId",
+            "recv": [],
+            "send": [
+                172,
+                173,
+                227
+            ]
+        },
+        {
+            "code": 339,
+            "help": null,
+            "name": "SetCanvasTextureFormatByPath",
+            "recv": [],
+            "send": [
+                174,
+                227
+            ]
+        },
+        {
+            "code": 340,
+            "help": null,
+            "name": "SetCanvasTextureFormatByItemId",
+            "recv": [],
+            "send": [
+                175,
+                227
+            ]
+        },
+        {
+            "code": 354,
+            "help": null,
+            "name": "ResetSockets",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 355,
+            "help": null,
+            "name": "ResetSerialLink",
+            "recv": [],
+            "send": [
+                1,
+                2
+            ]
+        },
+        {
+            "code": 352,
+            "help": null,
+            "name": "AssignResourceToParamBlocked",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                21,
+                22,
+                25,
+                3
+            ]
+        },
+        {
+            "code": 353,
+            "help": null,
+            "name": "AssignResourceBlocked",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                21,
+                22,
+                25
+            ]
+        },
+        {
+            "code": 356,
+            "help": null,
+            "name": "JumpToPlayListEntryByDmxId",
+            "recv": [],
+            "send": [
+                236,
+                141,
+                142,
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "code": 357,
+            "help": null,
+            "name": "JumpToPlayListEntryByPath",
+            "recv": [],
+            "send": [
+                236,
+                145,
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "code": 358,
+            "help": null,
+            "name": "JumpToPlayListEntryByItemId",
+            "recv": [],
+            "send": [
+                236,
+                147,
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "code": 359,
+            "help": null,
+            "name": "SetMediaTransportMode",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                32
+            ]
+        },
+        {
+            "code": 281,
+            "help": null,
+            "name": "AssignDevice",
+            "recv": [],
+            "send": [
+                1,
+                2,
+                190
+            ]
+        },
+        {
+            "code": 236,
+            "help": null,
+            "name": "CreateCanvas",
+            "recv": [],
+            "send": [
+                132,
+                136,
+                137
+            ]
+        },
+        {
+            "code": 237,
+            "help": null,
+            "name": "CreateCanvasByPath",
+            "recv": [],
+            "send": [
+                174,
+                132,
+                136,
+                137
+            ]
+        },
+        {
+            "code": 238,
+            "help": null,
+            "name": "CreateCanvasByItemId",
+            "recv": [],
+            "send": [
+                238,
+                132,
+                136,
+                137
+            ]
+        },
+        {
+            "code": 224,
+            "help": null,
+            "name": "RecordLiveInputStop",
+            "recv": [],
+            "send": []
+        },
+        {
+            "code": 264,
+            "help": null,
+            "name": "CreateCanvasByPathFromTemplate",
+            "recv": [],
+            "send": [
+                174,
+                183,
+                177,
+                239,
+                72,
+                73,
+                132,
+                136,
+                137
+            ]
+        },
+        {
+            "code": 334,
+            "help": null,
+            "name": "GetHostRevisionNumber",
+            "recv": [
+                241
+            ],
+            "send": []
+        },
+        {
+            "code": 151,
+            "help": null,
+            "name": "GetTreeItemInfo",
+            "recv": [
+                240,
+                28,
+                48
+            ],
+            "send": [
+                45
+            ]
+        },
+        {
+            "code": 152,
+            "help": null,
+            "name": "GetMediaInfoByTreeItemIndex",
+            "recv": [
+                21,
+                22,
+                213,
+                99,
+                44,
+                72,
+                73,
+                192,
+                17,
+                18,
+                19,
+                20,
+                214
+            ],
+            "send": [
+                65
+            ]
+        },
+        {
+            "code": 193,
+            "help": null,
+            "name": "GetPlaylistEntryByDmxId",
+            "recv": [
+                45,
+                213,
+                99,
+                217,
+                216,
+                215,
+                218,
+                221,
+                220,
+                219,
+                222,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                151
+            ],
+            "send": [
+                141,
+                142,
+                242
+            ]
+        },
+        {
+            "code": 194,
+            "help": null,
+            "name": "GetPlaylistEntryByPath",
+            "recv": [
+                45,
+                213,
+                99,
+                217,
+                216,
+                215,
+                218,
+                221,
+                220,
+                219,
+                222,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                151
+            ],
+            "send": [
+                145,
+                242
+            ]
+        },
+        {
+            "code": 195,
+            "help": null,
+            "name": "GetPlaylistEntryByItemId",
+            "recv": [
+                45,
+                213,
+                99,
+                217,
+                216,
+                215,
+                218,
+                221,
+                220,
+                219,
+                222,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                151
+            ],
+            "send": [
+                147,
+                242
+            ]
+        },
+        {
+            "code": 196,
+            "help": null,
+            "name": "GetPlaylistEntryIndicesByDmxId",
+            "recv": [
+                243
+            ],
+            "send": [
+                141,
+                142
+            ]
+        },
+        {
+            "code": 197,
+            "help": null,
+            "name": "GetPlaylistEntryIndicesByPath",
+            "recv": [
+                243
+            ],
+            "send": [
+                145
+            ]
+        },
+        {
+            "code": 198,
+            "help": null,
+            "name": "GetPlaylistEntryIndicesByItemId",
+            "recv": [
+                243
+            ],
+            "send": [
+                147
+            ]
+        },
+        {
+            "code": 96,
+            "help": null,
+            "name": "CreateGraphicLayerGetId",
+            "recv": [
+                93
+            ],
+            "send": [
+                1,
+                92
+            ]
+        }
+    ],
+    "enums": [
+        {
+            "name": "param_kind",
+            "values": [
+                {
+                    "key": "no",
+                    "val": 0
+                },
+                {
+                    "key": "opacity",
+                    "val": 1
+                },
+                {
+                    "key": "mesh",
+                    "val": 2
+                },
+                {
+                    "key": "media",
+                    "val": 3
+                },
+                {
+                    "key": "inpoint",
+                    "val": 4
+                },
+                {
+                    "key": "outpoint",
+                    "val": 5
+                },
+                {
+                    "key": "transport",
+                    "val": 6
+                },
+                {
+                    "key": "x_pos",
+                    "val": 8
+                },
+                {
+                    "key": "y_pos",
+                    "val": 9
+                },
+                {
+                    "key": "z_pos",
+                    "val": 10
+                },
+                {
+                    "key": "x_angle",
+                    "val": 11
+                },
+                {
+                    "key": "y_angle",
+                    "val": 12
+                },
+                {
+                    "key": "z_angle",
+                    "val": 13
+                },
+                {
+                    "key": "x_scale",
+                    "val": 14
+                },
+                {
+                    "key": "y_scale",
+                    "val": 15
+                },
+                {
+                    "key": "z_scale",
+                    "val": 16
+                },
+                {
+                    "key": "x_axis",
+                    "val": 25
+                },
+                {
+                    "key": "y_axis",
+                    "val": 26
+                },
+                {
+                    "key": "z_axis",
+                    "val": 27
+                },
+                {
+                    "key": "x_offset",
+                    "val": 29
+                },
+                {
+                    "key": "y_offset",
+                    "val": 30
+                },
+                {
+                    "key": "KS_L",
+                    "val": 32
+                },
+                {
+                    "key": "kslr",
+                    "val": 33
+                },
+                {
+                    "key": "ksr",
+                    "val": 34
+                },
+                {
+                    "key": "ksrr",
+                    "val": 35
+                },
+                {
+                    "key": "kst",
+                    "val": 36
+                },
+                {
+                    "key": "kstr",
+                    "val": 37
+                },
+                {
+                    "key": "ksb",
+                    "val": 38
+                },
+                {
+                    "key": "ksbr",
+                    "val": 39
+                },
+                {
+                    "key": "lin_x",
+                    "val": 40
+                },
+                {
+                    "key": "lin_y",
+                    "val": 41
+                },
+                {
+                    "key": "sel",
+                    "val": 42
+                },
+                {
+                    "key": "selc",
+                    "val": 43
+                },
+                {
+                    "key": "ser",
+                    "val": 44
+                },
+                {
+                    "key": "serc",
+                    "val": 45
+                },
+                {
+                    "key": "set",
+                    "val": 46
+                },
+                {
+                    "key": "setc",
+                    "val": 47
+                },
+                {
+                    "key": "seb",
+                    "val": 48
+                },
+                {
+                    "key": "sebc",
+                    "val": 49
+                },
+                {
+                    "key": "volume",
+                    "val": 50
+                },
+                {
+                    "key": "x",
+                    "val": 51
+                },
+                {
+                    "key": "z",
+                    "val": 52
+                },
+                {
+                    "key": "room_size",
+                    "val": 53
+                },
+                {
+                    "key": "ambience",
+                    "val": 54
+                },
+                {
+                    "key": "diffusion",
+                    "val": 55
+                },
+                {
+                    "key": "blend_mode",
+                    "val": 56
+                },
+                {
+                    "key": "fx_hue",
+                    "val": 57
+                },
+                {
+                    "key": "fx_saturation",
+                    "val": 58
+                },
+                {
+                    "key": "fx_brightness",
+                    "val": 59
+                },
+                {
+                    "key": "multi_fx_list",
+                    "val": 60
+                },
+                {
+                    "key": "video_speed",
+                    "val": 61
+                },
+                {
+                    "key": "audio_pan",
+                    "val": 62
+                },
+                {
+                    "key": "rot_pivot_x_pos",
+                    "val": 63
+                },
+                {
+                    "key": "rot_pivot_y_pos",
+                    "val": 64
+                },
+                {
+                    "key": "rot_pivot_z_pos",
+                    "val": 65
+                },
+                {
+                    "key": "scale_pivot_x_pos",
+                    "val": 66
+                },
+                {
+                    "key": "scale_pivot_y_pos",
+                    "val": 67
+                },
+                {
+                    "key": "scale_pivot_z_pos",
+                    "val": 68
+                },
+                {
+                    "key": "x_rot_speed",
+                    "val": 69
+                },
+                {
+                    "key": "y_rot_speed",
+                    "val": 70
+                },
+                {
+                    "key": "z_rot_speed",
+                    "val": 71
+                },
+                {
+                    "key": "cam_target_x_pos",
+                    "val": 72
+                },
+                {
+                    "key": "cam_target_y_pos",
+                    "val": 73
+                },
+                {
+                    "key": "cam_target_z_pos",
+                    "val": 74
+                },
+                {
+                    "key": "cam_fov",
+                    "val": 75
+                },
+                {
+                    "key": "cam_near_plane",
+                    "val": 76
+                },
+                {
+                    "key": "cam_far_plane",
+                    "val": 77
+                },
+                {
+                    "key": "cam_aspect",
+                    "val": 78
+                },
+                {
+                    "key": "cam_z_roll",
+                    "val": 79
+                },
+                {
+                    "key": "cam_post_bypass",
+                    "val": 80
+                },
+                {
+                    "key": "cam_proj_mode",
+                    "val": 81
+                },
+                {
+                    "key": "particle_gravity",
+                    "val": 82
+                },
+                {
+                    "key": "particle_spawn_rate",
+                    "val": 83
+                },
+                {
+                    "key": "particle_speed",
+                    "val": 84
+                },
+                {
+                    "key": "particle_time_to_live",
+                    "val": 85
+                },
+                {
+                    "key": "particle_wind",
+                    "val": 86
+                },
+                {
+                    "key": "particle_wind_pos_x",
+                    "val": 87
+                },
+                {
+                    "key": "particle_wind_pos_y",
+                    "val": 88
+                },
+                {
+                    "key": "particle_wind_pos_z",
+                    "val": 89
+                },
+                {
+                    "key": "particle_wind_rot_x",
+                    "val": 90
+                },
+                {
+                    "key": "particle_wind_rot_y",
+                    "val": 91
+                },
+                {
+                    "key": "particle_wind_rot_z",
+                    "val": 92
+                },
+                {
+                    "key": "particle_emitter_type",
+                    "val": 93
+                },
+                {
+                    "key": "particle_emitter_radius",
+                    "val": 94
+                },
+                {
+                    "key": "particle_emitter_radius_option",
+                    "val": 95
+                },
+                {
+                    "key": "particle_mass",
+                    "val": 96
+                },
+                {
+                    "key": "particle_emission_angle",
+                    "val": 97
+                },
+                {
+                    "key": "particle_alignment",
+                    "val": 98
+                },
+                {
+                    "key": "particle_drag",
+                    "val": 99
+                },
+                {
+                    "key": "particle_emission_range",
+                    "val": 100
+                },
+                {
+                    "key": "cam_state",
+                    "val": 101
+                },
+                {
+                    "key": "audio_volume",
+                    "val": 102
+                },
+                {
+                    "key": "particle_color",
+                    "val": 103
+                },
+                {
+                    "key": "particle_opacity",
+                    "val": 104
+                },
+                {
+                    "key": "selm",
+                    "val": 105
+                },
+                {
+                    "key": "selmw",
+                    "val": 106
+                },
+                {
+                    "key": "serm",
+                    "val": 107
+                },
+                {
+                    "key": "sermw",
+                    "val": 108
+                },
+                {
+                    "key": "setm",
+                    "val": 109
+                },
+                {
+                    "key": "setmw",
+                    "val": 110
+                },
+                {
+                    "key": "sebm",
+                    "val": 111
+                },
+                {
+                    "key": "sebmw",
+                    "val": 112
+                },
+                {
+                    "key": "particle_x_scale",
+                    "val": 113
+                },
+                {
+                    "key": "particle_y_scale",
+                    "val": 114
+                },
+                {
+                    "key": "particle_z_scale",
+                    "val": 115
+                },
+                {
+                    "key": "ps_opacity",
+                    "val": 116
+                },
+                {
+                    "key": "particle_rotation_x",
+                    "val": 117
+                },
+                {
+                    "key": "particle_rotation_y",
+                    "val": 118
+                },
+                {
+                    "key": "particle_rotation_z",
+                    "val": 119
+                },
+                {
+                    "key": "x_rot_mode",
+                    "val": 120
+                },
+                {
+                    "key": "y_rot_mode",
+                    "val": 121
+                },
+                {
+                    "key": "z_rot_mode",
+                    "val": 122
+                },
+                {
+                    "key": "light_x_pos",
+                    "val": 123
+                },
+                {
+                    "key": "light_y_pos",
+                    "val": 124
+                },
+                {
+                    "key": "light_z_pos",
+                    "val": 125
+                },
+                {
+                    "key": "light_target_x_pos",
+                    "val": 126
+                },
+                {
+                    "key": "light_target_y_pos",
+                    "val": 127
+                },
+                {
+                    "key": "light_target_z_pos",
+                    "val": 128
+                },
+                {
+                    "key": "light_angle",
+                    "val": 129
+                },
+                {
+                    "key": "light_media",
+                    "val": 130
+                },
+                {
+                    "key": "light_intensity",
+                    "val": 131
+                },
+                {
+                    "key": "light_color_red",
+                    "val": 132
+                },
+                {
+                    "key": "light_color_green",
+                    "val": 133
+                },
+                {
+                    "key": "light_color_blue",
+                    "val": 134
+                },
+                {
+                    "key": "light_aspect",
+                    "val": 135
+                },
+                {
+                    "key": "light_z_roll",
+                    "val": 136
+                },
+                {
+                    "key": "light_tolerance",
+                    "val": 137
+                },
+                {
+                    "key": "shadow_softness",
+                    "val": 138
+                },
+                {
+                    "key": "widget_value1",
+                    "val": 140
+                },
+                {
+                    "key": "widget_value2",
+                    "val": 141
+                },
+                {
+                    "key": "widget_value3",
+                    "val": 142
+                },
+                {
+                    "key": "widget_value4",
+                    "val": 143
+                },
+                {
+                    "key": "widget_value5",
+                    "val": 144
+                },
+                {
+                    "key": "widget_value6",
+                    "val": 145
+                },
+                {
+                    "key": "widget_value7",
+                    "val": 146
+                },
+                {
+                    "key": "widget_value8",
+                    "val": 147
+                },
+                {
+                    "key": "widget_value9",
+                    "val": 148
+                },
+                {
+                    "key": "widget_value10",
+                    "val": 149
+                },
+                {
+                    "key": "widget_value11",
+                    "val": 150
+                },
+                {
+                    "key": "widget_value12",
+                    "val": 151
+                },
+                {
+                    "key": "matrix_mix",
+                    "val": 152
+                },
+                {
+                    "key": "matrix_texture",
+                    "val": 153
+                },
+                {
+                    "key": "matrix_patch",
+                    "val": 154
+                },
+                {
+                    "key": "pointer_loop_in_point",
+                    "val": 155
+                },
+                {
+                    "key": "pointer_out_delay",
+                    "val": 156
+                },
+                {
+                    "key": "pointer_offset_x",
+                    "val": 157
+                },
+                {
+                    "key": "pointer_offset_y",
+                    "val": 158
+                },
+                {
+                    "key": "rt_clear_color_red",
+                    "val": 159
+                },
+                {
+                    "key": "rt_clear_color_green",
+                    "val": 160
+                },
+                {
+                    "key": "rt_clear_color_blue",
+                    "val": 161
+                },
+                {
+                    "key": "rt_clear_color_alpha",
+                    "val": 162
+                },
+                {
+                    "key": "gen_persp_target_pt1_x",
+                    "val": 163
+                },
+                {
+                    "key": "gen_persp_target_pt1_y",
+                    "val": 164
+                },
+                {
+                    "key": "gen_persp_target_pt1_z",
+                    "val": 165
+                },
+                {
+                    "key": "gen_persp_target_pt2_x",
+                    "val": 166
+                },
+                {
+                    "key": "gen_persp_target_pt2_y",
+                    "val": 167
+                },
+                {
+                    "key": "gen_persp_target_pt2_z",
+                    "val": 168
+                },
+                {
+                    "key": "gen_persp_target_pt3_x",
+                    "val": 169
+                },
+                {
+                    "key": "gen_persp_target_pt3_y",
+                    "val": 170
+                },
+                {
+                    "key": "gen_persp_target_pt3_z",
+                    "val": 171
+                },
+                {
+                    "key": "engine_global_param",
+                    "val": 172
+                },
+                {
+                    "key": "browser_url",
+                    "val": 173
+                },
+                {
+                    "key": "camera_pre",
+                    "val": 174
+                },
+                {
+                    "key": "light_proj_mode",
+                    "val": 175
+                },
+                {
+                    "key": "default_mesh_shading_wire_red",
+                    "val": 176
+                },
+                {
+                    "key": "default_mesh_shading_wire_green",
+                    "val": 177
+                },
+                {
+                    "key": "default_mesh_shading_wire_blue",
+                    "val": 178
+                },
+                {
+                    "key": "default_mesh_shading_wire_alpha",
+                    "val": 179
+                },
+                {
+                    "key": "default_mesh_shading_fill_red",
+                    "val": 180
+                },
+                {
+                    "key": "default_mesh_shading_fill_green",
+                    "val": 181
+                },
+                {
+                    "key": "default_mesh_shading_fill_blue",
+                    "val": 182
+                },
+                {
+                    "key": "default_mesh_shading_fill_alpha",
+                    "val": 183
+                },
+                {
+                    "key": "default_mesh_shading_wire_width",
+                    "val": 184
+                },
+                {
+                    "key": "default_mesh_shading_ambient",
+                    "val": 185
+                },
+                {
+                    "key": "default_mesh_shading_diffuse",
+                    "val": 186
+                },
+                {
+                    "key": "default_mesh_shading_specular",
+                    "val": 187
+                },
+                {
+                    "key": "default_mesh_shading_shininess",
+                    "val": 188
+                },
+                {
+                    "key": "default_mesh_shading_wire_brightness_factor",
+                    "val": 189
+                }
+            ]
+        },
+        {
+            "name": "clx_hardware",
+            "values": [
+                {
+                    "key": "fader_extension",
+                    "val": 0
+                },
+                {
+                    "key": "jog_shuttle",
+                    "val": 1
+                }
+            ]
+        },
+        {
+            "name": "consistency",
+            "values": [
+                {
+                    "key": "inconsistent",
+                    "val": 1
+                },
+                {
+                    "key": "consistent",
+                    "val": 0
+                }
+            ]
+        },
+        {
+            "name": "selection_mode",
+            "values": [
+                {
+                    "key": "set_selection",
+                    "val": 0
+                },
+                {
+                    "key": "add_selection",
+                    "val": 1
+                },
+                {
+                    "key": "unselect",
+                    "val": 2
+                },
+                {
+                    "key": "unselect_all",
+                    "val": 3
+                }
+            ]
+        },
+        {
+            "name": "watch_folder_property",
+            "values": [
+                {
+                    "key": "include_subdirectories",
+                    "val": 1
+                },
+                {
+                    "key": "delete_in_project",
+                    "val": 2
+                },
+                {
+                    "key": "delete_in_clients",
+                    "val": 3
+                }
+            ]
+        },
+        {
+            "name": "transport_mode",
+            "values": [
+                {
+                    "key": "play",
+                    "val": 1
+                },
+                {
+                    "key": "pause",
+                    "val": 3
+                },
+                {
+                    "key": "stop",
+                    "val": 2
+                }
+            ]
+        },
+        {
+            "name": "sequence_smpte_mode",
+            "values": [
+                {
+                    "key": "no",
+                    "val": 0
+                },
+                {
+                    "key": "send",
+                    "val": 1
+                },
+                {
+                    "key": "receive",
+                    "val": 2
+                }
+            ]
+        },
+        {
+            "name": "sequence_smpte_stop_mode",
+            "values": [
+                {
+                    "key": "no",
+                    "val": 0
+                },
+                {
+                    "key": "stop",
+                    "val": 1
+                },
+                {
+                    "key": "pause",
+                    "val": 2
+                },
+                {
+                    "key": "continue",
+                    "val": 3
+                }
+            ]
+        },
+        {
+            "name": "media_option",
+            "values": [
+                {
+                    "key": "anisotropic_filtering",
+                    "val": 1
+                },
+                {
+                    "key": "ignore_thumbnail",
+                    "val": 2
+                },
+                {
+                    "key": "video_alpha_channel",
+                    "val": 4
+                },
+                {
+                    "key": "fluid_frame",
+                    "val": 8
+                },
+                {
+                    "key": "optimize_mpeg_colorspace",
+                    "val": 16
+                },
+                {
+                    "key": "underscan",
+                    "val": 32
+                },
+                {
+                    "key": "optimize_looping",
+                    "val": 64
+                },
+                {
+                    "key": "mute_sound",
+                    "val": 128
+                }
+            ]
+        }
+    ],
+    "revision": "12086",
+    "types": {
+        "1": {
+            "name": "byte"
+        },
+        "2": {
+            "name": "short"
+        },
+        "3": {
+            "name": "int"
+        },
+        "4": {
+            "name": "int64"
+        },
+        "5": {
+            "name": "double"
+        },
+        "6": {
+            "name": "string_narrow"
+        },
+        "7": {
+            "name": "string_wide"
+        },
+        "10": {
+            "name": "bool"
+        },
+        "12": {
+            "name": "int_buffer"
+        },
+        "13": {
+            "name": "byte_buffer"
+        },
+        "99": {
+            "name": "data_type"
+        },
+        "100": {
+            "name": "sys_repeat"
+        },
+        "101": {
+            "name": "int"
+        },
+        "102": {
+            "name": "byte"
+        },
+        "103": {
+            "name": "byte"
+        },
+        "104": {
+            "name": "int"
+        },
+        "105": {
+            "name": "int"
+        },
+        "106": {
+            "name": "int"
+        },
+        "107": {
+            "name": "int"
+        },
+        "108": {
+            "name": "int"
+        },
+        "109": {
+            "name": "int"
+        },
+        "110": {
+            "name": "int"
+        },
+        "111": {
+            "name": "int"
+        },
+        "112": {
+            "name": "int"
+        }
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "jobs": [
+        {
+            "files": [
+                {
+                    "dst": "README.md",
+                    "hash": "53c1a36fbd89d676582e17d1824dd0378b91608e",
+                    "src": "lang-readme.md"
+                },
+                {
+                    "hash": "4c48ab27bcea99f695c1efcfa4d58969120b2944",
+                    "src": "PandorasBox.cs",
+                    "vars": {
+                        "arraytypes": [
+                            "byte_buffer",
+                            "int_buffer"
+                        ]
+                    }
+                },
+                {
+                    "hash": "b99993998797cfc16bee0383439705c49ca29d2e",
+                    "src": "LICENSE"
+                }
+            ],
+            "name": "pbauto-csharp",
+            "src": "csharp",
+            "version_major": 0,
+            "version_minor": 1
+        },
+        {
+            "files": [
+                {
+                    "dst": "README.md",
+                    "hash": "53c1a36fbd89d676582e17d1824dd0378b91608e",
+                    "src": "lang-readme.md"
+                },
+                {
+                    "hash": "4000e87a47f5d0aa8dd8682208b31eb829cfde95",
+                    "src": "PandorasAutomation.js"
+                },
+                {
+                    "hash": "b99993998797cfc16bee0383439705c49ca29d2e",
+                    "src": "LICENSE"
+                }
+            ],
+            "name": "pbauto-javascript-browser",
+            "src": "javascript",
+            "version_major": 0,
+            "version_minor": 1
+        },
+        {
+            "files": [
+                {
+                    "dst": "README.md",
+                    "hash": "53c1a36fbd89d676582e17d1824dd0378b91608e",
+                    "src": "lang-readme.md"
+                },
+                {
+                    "hash": "f354902edf30e33640eced2a122c89229fcfb19d",
+                    "src": "index.js"
+                },
+                {
+                    "hash": "b99993998797cfc16bee0383439705c49ca29d2e",
+                    "src": "LICENSE"
+                },
+                {
+                    "hash": "496329e8c509908c9168131fcb08d797d6f6b213",
+                    "src": "pbauto-nodejs-http-package.json"
+                }
+            ],
+            "name": "pbauto-nodejs-http",
+            "src": "nodejs",
+            "version_major": 0,
+            "version_minor": 1
+        },
+        {
+            "files": [
+                {
+                    "dst": "README.md",
+                    "hash": "53c1a36fbd89d676582e17d1824dd0378b91608e",
+                    "src": "lang-readme.md"
+                },
+                {
+                    "hash": "f79c1cdf67cdf93eb79519ca7858259cc773876f",
+                    "src": "pbauto.py"
+                },
+                {
+                    "hash": "b99993998797cfc16bee0383439705c49ca29d2e",
+                    "src": "LICENSE"
+                }
+            ],
+            "name": "pbauto-python",
+            "src": "python",
+            "version_major": 0,
+            "version_minor": 1
+        }
+    ],
+    "revision": "12086"
+}

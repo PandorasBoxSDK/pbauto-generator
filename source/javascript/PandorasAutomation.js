@@ -1,0 +1,6 @@
+/* Pandoras Box Automation - {{ lang }} v{{ version }} @{{ time }} <support@coolux.de> */{% for et in enums %}
+var {{et.name|camelize}} = { {% for e in et['values'] %}{{ e.key|camelize }}: {{ e.val }}{% if loop.last == false %},{% endif %}{% endfor %} };{% endfor %}
+var PBAuto = { {% for command in commands %}
+{{ command.name|camelize_small }}: function({% for a in command.send %}{{ a.name|camelize_small }}, {% endfor %}callback){var b = new Buffer();b.writeShort({{command.code}});{% for a in command.send %}b.write{{ types[a.type_id].name|camelize }}({{ a.name }});{% endfor %}s(b, callback || false, [{% for r in command.recv %}{name: '{{ r.name|camelize_small }}', type: '{{ types[r.type_id].name|camelize }}'}{% if loop.last == false %}, {% endif %}{% endfor %}]);}{% if loop.last == false %},{% endif %}{% endfor %} };
+function s(t,e,r){var i=new XMLHttpRequest;i.open("PBAUTO","/",!0),"function"==typeof e&&(i.onreadystatechange=function(){if(4===i.readyState){var t={http:i.status,ok:200===i.status,code:-1/0};if(t.ok){var o=new Parser(Base64.decode(i.responseText));if(t.code=o.readShort(),t.code>=0)for(var s=0;s<r.length;s++)t[r[s].name]=o["read"+r[s].type]();else t.ok=!1,t.code=o.readInt()}else t.success=!1,console.log("PBAuto Error",i.statusText);e(t)}}),i.send(Base64.encode(t.getRawBytes()))};
+{% include "javascript-core.js" %}

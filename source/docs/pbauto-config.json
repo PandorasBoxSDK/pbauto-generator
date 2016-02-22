@@ -1,0 +1,15 @@
+{
+    "skip": false,
+    "name": "pbauto-python",
+    "version": "1.0",
+    "targetDir": "../pbauto-docs",
+    "jinja2": [
+        { "src": "LICENSE", "dst": "LICENSE" }
+    ],
+    "md": [
+        { "src": "protocol.md", "dst": "protocol.html",
+          "head": "docheader.html", "foot": "docfooter.html" }
+    ],
+    "vars": {
+    }
+}
