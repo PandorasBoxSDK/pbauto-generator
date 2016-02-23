@@ -74,10 +74,7 @@ def main(regenerate=False):
             template = jinja2_env.get_template(job_file['src'])
             template_hash = hash_file(template.filename)
 
-            # check if the file has changed
-            file_changed = template_hash != job_file['hash']
-
-            if not rev_changed and not file_changed and not regenerate:
+            if not rev_changed and not any_changed:
                 print("Skipping", template.filename[len(BASE_PATH):])
                 continue
 
@@ -106,8 +103,7 @@ def main(regenerate=False):
                 outfile.write(template.render(data))
 
             # update hash
-            if file_changed or regenerate:
-                job_file['hash'] = template_hash
+            job_file['hash'] = template_hash
 
     if rev_changed:
         config['revision'] = db['revision']
