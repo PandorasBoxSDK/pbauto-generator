@@ -9,6 +9,6 @@ If the major version changes, then these changes are incompatible with prior ver
 
 ## Contributing
 Most of the files in this repository are generated. Please contribute to the template files instead.
-https://github.com/coolux/pbauto-generator
+https://github.com/PandorasBoxSDK/pbauto-generator
 
 v{{ version }}, generated on {{ time }}

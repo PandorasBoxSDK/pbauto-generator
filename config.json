@@ -4,7 +4,7 @@
             "files": [
                 {
                     "dst": "README.md",
-                    "hash": "53c1a36fbd89d676582e17d1824dd0378b91608e",
+                    "hash": "d1426c4690232324b6bc96d46e7bc8ff9192ee7e",
                     "src": "lang-readme.md"
                 },
                 {
@@ -25,13 +25,13 @@
             "name": "pbauto-csharp",
             "src": "csharp",
             "version_major": 0,
-            "version_minor": 1
+            "version_minor": 2
         },
         {
             "files": [
                 {
                     "dst": "README.md",
-                    "hash": "53c1a36fbd89d676582e17d1824dd0378b91608e",
+                    "hash": "d1426c4690232324b6bc96d46e7bc8ff9192ee7e",
                     "src": "lang-readme.md"
                 },
                 {
@@ -46,13 +46,13 @@
             "name": "pbauto-javascript-browser",
             "src": "javascript",
             "version_major": 0,
-            "version_minor": 1
+            "version_minor": 2
         },
         {
             "files": [
                 {
                     "dst": "README.md",
-                    "hash": "53c1a36fbd89d676582e17d1824dd0378b91608e",
+                    "hash": "d1426c4690232324b6bc96d46e7bc8ff9192ee7e",
                     "src": "lang-readme.md"
                 },
                 {
@@ -64,20 +64,20 @@
                     "src": "LICENSE"
                 },
                 {
-                    "hash": "496329e8c509908c9168131fcb08d797d6f6b213",
+                    "hash": "3a94c8c81ee194f60f53b44cdcd602ce42d4fd65",
                     "src": "package.json"
                 }
             ],
             "name": "pbauto-nodejs-http",
             "src": "nodejs",
             "version_major": 3,
-            "version_minor": 1
+            "version_minor": 3
         },
         {
             "files": [
                 {
                     "dst": "README.md",
-                    "hash": "53c1a36fbd89d676582e17d1824dd0378b91608e",
+                    "hash": "d1426c4690232324b6bc96d46e7bc8ff9192ee7e",
                     "src": "lang-readme.md"
                 },
                 {
@@ -92,7 +92,7 @@
             "name": "pbauto-python",
             "src": "python",
             "version_major": 0,
-            "version_minor": 1
+            "version_minor": 2
         }
     ],
     "revision": "12086"
