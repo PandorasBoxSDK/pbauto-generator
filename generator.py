@@ -74,7 +74,7 @@ def main(regenerate=False):
             template = jinja2_env.get_template(job_file['src'])
             template_hash = hash_file(template.filename)
 
-            if not rev_changed and not any_changed:
+            if not rev_changed and not any_changed and not regenerate:
                 print("Skipping", template.filename[len(BASE_PATH):])
                 continue
 
