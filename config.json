@@ -81,7 +81,7 @@
                     "src": "lang-readme.md"
                 },
                 {
-                    "hash": "f79c1cdf67cdf93eb79519ca7858259cc773876f",
+                    "hash": "ecc2802fc732dfffef57c464bc0f5c5a34ed5587",
                     "src": "pbauto.py"
                 },
                 {
@@ -92,7 +92,7 @@
             "name": "pbauto-python",
             "src": "python",
             "version_major": 0,
-            "version_minor": 2
+            "version_minor": 3
         }
     ],
     "revision": "12086"
