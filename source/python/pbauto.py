@@ -53,6 +53,8 @@ class OfflineTcp(Connector):
             return "{" + ', '.join('0x{:02x}'.format(x) for x in data) + "}"
         elif self.data_format == 'wd':
             return ''.join('[h{:02x}]'.format(x) for x in data)
+        elif self.data_format == 'pb':
+            return ' '.join('[h{:02x}]'.format(x) for x in data)
         else:
             raise Exception("Not a format: '%s'" % self.data_format)
 
