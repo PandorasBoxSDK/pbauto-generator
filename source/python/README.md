@@ -25,6 +25,23 @@ pb = pbauto.PBAuto.connect_tcp(ip, domain)
 You can then proceed to use all api functions.
 
 ```python
-pb.getSelectedDeviceCount()
+pb.get_selected_device_count()
 # returns {'selectedDevicesCount': 2, 'ok': True, 'code': 81}
+```
+
+## Message Generator
+The python file also allows you to generate the messages required to control Pandoras Box. The idea is that you can generate the message code with the python code and then use it in 3rd party tools that are able to send TCP messages. There are a couple of formattings available:
+
+- **hex**: A simple HEX representation
+- **PB**: Pandoras Box Serial Link device compatible message (*use the HEX setting*)
+- **WD**: The Widget Designer Hex code style [hXX]
+- **cpp** C++ compatible hex code for arrays
+
+It is important to know that the message changes if the PB Domain changes. As long as you keep the Domain, you can use the same message code.
+
+```
+pb = PBAuto.offline_tcp(data_format='pb')
+pb.reset_all()
+
+# prints "[h50] [h42] [h41] [h55] [h01] [h00] [h00] [h00] [h00] [h00] [h02] [h00] [h00] [h00] [h00] [h00] [h03] [h00] [h09]"
 ```
