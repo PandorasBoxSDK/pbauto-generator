@@ -126,7 +126,7 @@ class ByteUtil:
         self.__data.extend(struct.pack('!q', val))
 
     def write_double(self, val):
-        self.__data.extend(struct.pack('!d', val))
+        self.__data.extend(struct.pack('d', val))
 
     def write_string_narrow(self, val):
         self.__data.extend(struct.pack('!h', len(val)))
@@ -160,7 +160,7 @@ class ByteUtil:
         return struct.unpack("!q", self._read_block(8))[0]
 
     def read_double(self):
-        return struct.unpack("!d", self._read_block(8))[0]
+        return struct.unpack("d", self._read_block(8))[0]
 
     def read_string_narrow(self):
         length = self.readShort()
