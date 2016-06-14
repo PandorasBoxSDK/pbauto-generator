@@ -44,14 +44,14 @@ namespace PandorasBox
             b.write{{ types[a.type_id].name|camelize }}({{ a.name|camelize_small }});{% endfor %}
             {% if c.recv|count > 0 %}b = c.Send(b, true);
             var r = new {{ c.name|camelize }}Result();
-            if(b == null)
+            r.code = b.readShort();
+            if(r.code != {{ c.code }})
             {
             	r.code = -1;
-            	r.error = 1;
+            	r.error = 7; // WrongMessageReturned
             	return r;
             }
-            r.code = b.readShort();
-            if (r.code < 0) r.error = b.readInt(); else
+            if(r.code < 0) r.error = b.readInt(); else
             {
                 r.error = 0;{% for r in c.recv %}
                 r.{{ r.name|camelize_small }} = b.read{{ types[r.type_id].name|camelize }}();{% endfor %}
