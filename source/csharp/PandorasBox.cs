@@ -239,7 +239,7 @@ namespace PandorasBox
             if(header[0] != 0x50 || header[1] != 0x42 || header[2] != 0x41 || header[3] != 0x55 || header.PBAutoChecksum() != header[16])
             {
                 // Not a PB Header or checksum fail
-                throw new ApplicationException("Error when communicating with Pandoras Box: Invalid response");
+                return null;
             }
 
             int message_length = header.GetInt16(9);
