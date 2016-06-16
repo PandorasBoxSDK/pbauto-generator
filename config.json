@@ -8,7 +8,7 @@
                     "src": "lang-readme.md"
                 },
                 {
-                    "hash": "4c48ab27bcea99f695c1efcfa4d58969120b2944",
+                    "hash": "170e3be1cab6fe61c4674e007f2a8e8c61229dcf",
                     "src": "PandorasBox.cs",
                     "vars": {
                         "arraytypes": [
@@ -25,7 +25,7 @@
             "name": "pbauto-csharp",
             "src": "csharp",
             "version_major": 0,
-            "version_minor": 2
+            "version_minor": 3
         },
         {
             "files": [

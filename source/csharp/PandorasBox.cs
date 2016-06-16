@@ -45,7 +45,17 @@ namespace PandorasBox
             {% if c.recv|count > 0 %}b = c.Send(b, true);
             var r = new {{ c.name|camelize }}Result();
             r.code = b.readShort();
-            if (r.code < 0) r.error = b.readInt(); else
+            if(r.code < 0)
+            {
+                r.error = b.readInt();
+            }
+            else if(r.code != {{ c.code }})
+            {
+            	r.code = -1;
+            	r.error = 7; // WrongMessageReturned
+            	return r;
+            }
+            else
             {
                 r.error = 0;{% for r in c.recv %}
                 r.{{ r.name|camelize_small }} = b.read{{ types[r.type_id].name|camelize }}();{% endfor %}
@@ -149,7 +159,7 @@ namespace PandorasBox
         public void writeStringNarrow(string value) { writeShort((short)value.Length); list_bytes.AddRange(Encoding.UTF8.GetBytes(value)); }
         public void writeStringWide(string value) { writeShort((short)value.Length); list_bytes.AddRange(Encoding.BigEndianUnicode.GetBytes(value)); }
         public void writeByteBuffer(byte[] value) { writeInt(value.Length); list_bytes.AddRange(value); }
-        public void writeIntBuffer(int[] value) { writeInt(value.Length); foreach (var i in value) { list_bytes.AddRange(i.GetBytesNetworkOrder()); } }
+        public void writeIntBuffer(int[] value) { foreach (var i in value) { list_bytes.AddRange(i.GetBytesNetworkOrder()); } }
 
         // Reading
         private byte[] _readBlock(int length) { var ret = new byte[length]; Array.Copy(read_bytes, position, ret, 0, length);position += length;return ret; }
@@ -160,9 +170,9 @@ namespace PandorasBox
         public long readInt64() { return _readBlock(8).GetInt64(); }
         public double readDouble() { return BitConverter.ToDouble(_readBlock(8), 0); }
         public string readStringNarrow() { int length = readShort(); return Encoding.UTF8.GetString(_readBlock(length)); }
-        public string readStringWide() { int length = readShort(); return Encoding.BigEndianUnicode.GetString(_readBlock(length)); }
+        public string readStringWide() { int length = readShort(); return Encoding.BigEndianUnicode.GetString(_readBlock(length * 2)); }
         public byte[] readByteBuffer() { int length = readInt(); return _readBlock(length); }
-        public int[] readIntBuffer() { int length = readInt(); int[] result = new int[length]; for (int i = 0;i < length; i++) { result[i] = _readBlock(4).GetInt32(); }; return result; }
+        public int[] readIntBuffer() { int length = (read_bytes.Length - position) / 4; int[] result = new int[length]; for (int i = 0;i < length; i++) { result[i] = _readBlock(4).GetInt32(); }; return result; }
     }
 
     /// <summary>
@@ -181,6 +191,7 @@ namespace PandorasBox
         private string ip;
         private int domain;
         private TcpClient client;
+        private object sendLock = new object();
         private const int PORT = 6211;
 
         public TCP(string ip, int domain = 0)
@@ -215,34 +226,37 @@ namespace PandorasBox
             header.CopyTo(message, 0);
             data.CopyTo(message, 17);
 
-            var stream = client.GetStream();
-            stream.Write(message, 0, message.Length);
-            stream.Flush();
-
-            if( !has_response )
+            lock(sendLock)
             {
-                return null;
-            }
+                var stream = client.GetStream();
+                stream.Write(message, 0, message.Length);
+                stream.Flush();
 
-            int bytesread = 0;
-            while(bytesread < 17)
-            {
-                bytesread += stream.Read(header, bytesread, 17 - bytesread);
-            }
+                if( !has_response )
+                {
+                    return null;
+                }
 
-            if(header[0] != 0x50 || header[1] != 0x42 || header[2] != 0x41 || header[3] != 0x55 || header.PBAutoChecksum() != header[16])
-            {
-                // Not a PB Header or checksum fail
-                throw new ApplicationException("Error when communicating with Pandoras Box: Invalid response");
-            }
+                int bytesread = 0;
+                while(bytesread < 17)
+                {
+                    bytesread += stream.Read(header, bytesread, 17 - bytesread);
+                }
 
-            int message_length = header.GetInt16(9);
-            message = new byte[message_length];
+                if(header[0] != 0x50 || header[1] != 0x42 || header[2] != 0x41 || header[3] != 0x55 || header.PBAutoChecksum() != header[16])
+                {
+                    // Not a PB Header or checksum fail
+                    return new ByteUtil(new byte[]{ 255, 255, 0, 0, 0, 7});
+                }
 
-            bytesread = 0;
-            while (bytesread < message_length)
-            {
-                bytesread += stream.Read(message, bytesread, message_length - bytesread);
+                int message_length = header.GetInt16(9);
+                message = new byte[message_length];
+
+                bytesread = 0;
+                while (bytesread < message_length)
+                {
+                    bytesread += stream.Read(message, bytesread, message_length - bytesread);
+                }
             }
 
             return new ByteUtil(message);
