@@ -191,6 +191,7 @@ namespace PandorasBox
         private string ip;
         private int domain;
         private TcpClient client;
+        private object sendLock = new object();
         private const int PORT = 6211;
 
         public TCP(string ip, int domain = 0)
@@ -225,34 +226,37 @@ namespace PandorasBox
             header.CopyTo(message, 0);
             data.CopyTo(message, 17);
 
-            var stream = client.GetStream();
-            stream.Write(message, 0, message.Length);
-            stream.Flush();
-
-            if( !has_response )
+            lock(sendLock)
             {
-                return null;
-            }
+                var stream = client.GetStream();
+                stream.Write(message, 0, message.Length);
+                stream.Flush();
 
-            int bytesread = 0;
-            while(bytesread < 17)
-            {
-                bytesread += stream.Read(header, bytesread, 17 - bytesread);
-            }
+                if( !has_response )
+                {
+                    return null;
+                }
 
-            if(header[0] != 0x50 || header[1] != 0x42 || header[2] != 0x41 || header[3] != 0x55 || header.PBAutoChecksum() != header[16])
-            {
-                // Not a PB Header or checksum fail
-                return new ByteUtil(new []{ 255, 255, 0, 0, 0, 7});
-            }
+                int bytesread = 0;
+                while(bytesread < 17)
+                {
+                    bytesread += stream.Read(header, bytesread, 17 - bytesread);
+                }
 
-            int message_length = header.GetInt16(9);
-            message = new byte[message_length];
+                if(header[0] != 0x50 || header[1] != 0x42 || header[2] != 0x41 || header[3] != 0x55 || header.PBAutoChecksum() != header[16])
+                {
+                    // Not a PB Header or checksum fail
+                    return new ByteUtil(new []{ 255, 255, 0, 0, 0, 7});
+                }
 
-            bytesread = 0;
-            while (bytesread < message_length)
-            {
-                bytesread += stream.Read(message, bytesread, message_length - bytesread);
+                int message_length = header.GetInt16(9);
+                message = new byte[message_length];
+
+                bytesread = 0;
+                while (bytesread < message_length)
+                {
+                    bytesread += stream.Read(message, bytesread, message_length - bytesread);
+                }
             }
 
             return new ByteUtil(message);
