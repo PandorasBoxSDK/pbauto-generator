@@ -45,13 +45,17 @@ namespace PandorasBox
             {% if c.recv|count > 0 %}b = c.Send(b, true);
             var r = new {{ c.name|camelize }}Result();
             r.code = b.readShort();
-            if(r.code != {{ c.code }})
+            if(r.code < 0)
+            {
+                r.error = b.readInt();
+            }
+            else if(r.code != {{ c.code }})
             {
             	r.code = -1;
             	r.error = 7; // WrongMessageReturned
             	return r;
             }
-            if(r.code < 0) r.error = b.readInt(); else
+            else
             {
                 r.error = 0;{% for r in c.recv %}
                 r.{{ r.name|camelize_small }} = b.read{{ types[r.type_id].name|camelize }}();{% endfor %}
@@ -239,7 +243,7 @@ namespace PandorasBox
             if(header[0] != 0x50 || header[1] != 0x42 || header[2] != 0x41 || header[3] != 0x55 || header.PBAutoChecksum() != header[16])
             {
                 // Not a PB Header or checksum fail
-                return null;
+                return new ByteUtil(new []{ 255, 255, 0, 0, 0, 7});
             }
 
             int message_length = header.GetInt16(9);
