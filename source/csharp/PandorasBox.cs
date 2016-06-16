@@ -159,7 +159,7 @@ namespace PandorasBox
         public void writeStringNarrow(string value) { writeShort((short)value.Length); list_bytes.AddRange(Encoding.UTF8.GetBytes(value)); }
         public void writeStringWide(string value) { writeShort((short)value.Length); list_bytes.AddRange(Encoding.BigEndianUnicode.GetBytes(value)); }
         public void writeByteBuffer(byte[] value) { writeInt(value.Length); list_bytes.AddRange(value); }
-        public void writeIntBuffer(int[] value) { writeInt(value.Length); foreach (var i in value) { list_bytes.AddRange(i.GetBytesNetworkOrder()); } }
+        public void writeIntBuffer(int[] value) { foreach (var i in value) { list_bytes.AddRange(i.GetBytesNetworkOrder()); } }
 
         // Reading
         private byte[] _readBlock(int length) { var ret = new byte[length]; Array.Copy(read_bytes, position, ret, 0, length);position += length;return ret; }
@@ -170,9 +170,9 @@ namespace PandorasBox
         public long readInt64() { return _readBlock(8).GetInt64(); }
         public double readDouble() { return BitConverter.ToDouble(_readBlock(8), 0); }
         public string readStringNarrow() { int length = readShort(); return Encoding.UTF8.GetString(_readBlock(length)); }
-        public string readStringWide() { int length = readShort(); return Encoding.BigEndianUnicode.GetString(_readBlock(length)); }
+        public string readStringWide() { int length = readShort(); return Encoding.BigEndianUnicode.GetString(_readBlock(length * 2)); }
         public byte[] readByteBuffer() { int length = readInt(); return _readBlock(length); }
-        public int[] readIntBuffer() { int length = readInt(); int[] result = new int[length]; for (int i = 0;i < length; i++) { result[i] = _readBlock(4).GetInt32(); }; return result; }
+        public int[] readIntBuffer() { int length = (read_bytes.Length - position) / 4; int[] result = new int[length]; for (int i = 0;i < length; i++) { result[i] = _readBlock(4).GetInt32(); }; return result; }
     }
 
     /// <summary>
